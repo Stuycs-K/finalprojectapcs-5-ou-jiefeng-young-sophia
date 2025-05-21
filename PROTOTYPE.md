@@ -10,7 +10,7 @@ How you will be using the topics covered in class in the project.
 
 Minesweeper consists of a grid of squares. You click on each square to reveal the tile and see whether it's a bomb or not. If it's a bomb, you lose, and if it isn't, it'll reveal how many bombs are next to that tile. We'll make two classes: grid and square. The square objects are the tiles (both bomb and safe), and when hidden, will display as green(?) squares. The grid object will consist of a 2D array in the grid class (kind of like the image array from kernels), and is responsible for the generation of the grid at the start of the game (like treeburning). On the screen the squares are placed directly next to each other into a grid. When you left click on the screen, the coordinates of where you pressed will correspond to a square that'll reveal itself.
 
-Critical features:
+Critical features: Board that can randomly place bombs and squares that display the correct number of bomb neighbors. When a bomb is clicked on, the game ends.
 
 Nice to have features: 3x3 bomb areas are not allowed to be generated, tiles with 0 bombs next to it will dig up the area around
 
