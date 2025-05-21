@@ -17,7 +17,7 @@ Nice to have features: 3x3 bomb areas are not allowed to be generated, tiles wit
 # Project Design
 
 UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
-
+![Alt text](UML-Minesweeper.jpg?raw=true "Title" )
 
 
 # Intended pacing:
