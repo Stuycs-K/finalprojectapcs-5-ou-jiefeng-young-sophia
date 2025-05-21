@@ -18,13 +18,20 @@ Nice to have features: 3x3 bomb areas are not allowed to be generated, tiles wit
 
 UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
 
-Grid uses a Tile[][] board, and each tile has three variables that describe it.  
+Grid uses a Tile[][] board, and each tile has four variables that describe it.  
 
-When Grid is initialized by the main class, it calls setBombs(int n) which will set n amount of tiles to bombs, and each bomb tile will call setNeighbors(), which increments the neighborBombs of all surrounding tiles by one. The constructor will then call initialDisplay(), which displays a board of unrevealed tiles. 
+When Grid is initialized by the main class, it will make a Tile[][] and set the total size to totalHidden. Then, setBombs(int n) is called, which will set n amount of tiles to bombs. Each bomb tile will call setNeighbors(), which increments the neighborBombs of all surrounding tiles by one. The constructor will then call initialDisplay(), which displays a board of unrevealed tiles. 
 
-When the player left clicks, revealTile(int x, int y) is called, which will set the corresponding tile's isRevealed to true. Then, the revealed tile will be drawn. An exception is made when the first tile clicked is a bomb. In that case, editFirstBomb() is called, where a different random tile is made into a bomb and the tile clicked becomes a regular tile (and surrounding tiles are decremented). This is so players don't die before revealing a single tile.
+When the player left clicks, revealTile(int x, int y) is called, which will set the corresponding tile's isRevealed to true. The revealed tile will be drawn, and totalHidden will decrease by one.  
+An exception is made when the first tile clicked is a bomb. In that case, editFirstBomb() is called first, where a different random tile is made into a bomb and the tile clicked becomes a regular tile (and surrounding tiles are decremented). This is so players don't die before revealing a single tile.
 
-When the player right clicks, flagTile(int x, int y) is called, which will set the corresponding tile's isFlagged to true and then display the tile with flag. In this state, if a player calls revealTile, nothing will happen. A flag cannot be set on a 
+When the player right clicks, flagTile(int x, int y) is called, which will set the corresponding tile's isFlagged to true and then display the tile with flag. In this state, if a player calls revealTile, nothing will happen. A flag cannot be set when the totalFlags is the same as the totalBombs. 
+
+The game ends when:
+1. revealTile sets a bomb tile's isRevealed to true, in which case the screen will display a game over.
+2. totalHidden is equal to totalBombs, which means all the remaining tiles are bombs.
+
+Additionally, a bomb counter will be on the screen, which will display the totalBombs - totalFlags.
 
 # Intended pacing:
 
