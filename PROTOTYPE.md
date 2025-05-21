@@ -18,7 +18,13 @@ Nice to have features: 3x3 bomb areas are not allowed to be generated, tiles wit
 
 UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
 
+Grid uses a Tile[][] board, and each tile has three variables that describe it.  
 
+When Grid is initialized by the main class, it calls setBombs(int n) which will set n amount of tiles to bombs, and each bomb tile will call setNeighbors(), which increments the neighborBombs of all surrounding tiles by one. The constructor will then call initialDisplay(), which displays a board of unrevealed tiles. 
+
+When the player left clicks, revealTile(int x, int y) is called, which will set the corresponding tile's isRevealed to true. Then, the revealed tile will be drawn. An exception is made when the first tile clicked is a bomb. In that case, editFirstBomb() is called, where a different random tile is made into a bomb and the tile clicked becomes a regular tile (and surrounding tiles are decremented). This is so players don't die before revealing a single tile.
+
+When the player right clicks, flagTile(int x, int y) is called, which will set the corresponding tile's isFlagged to true and then display the tile with flag. In this state, if a player calls revealTile, nothing will happen. A flag cannot be set on a 
 
 # Intended pacing:
 
