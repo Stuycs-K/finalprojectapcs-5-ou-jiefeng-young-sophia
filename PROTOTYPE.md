@@ -41,41 +41,23 @@ How you are breaking down the project and who is responsible for which parts.
 
 A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
 
-- Create the main, grid, and tile classes
-- Main
-    - Setup
-    - Determine how many bombs, length of tiles, size of board
-- Tile
-    - Have private variables
-    - Make a constructor
-    - isBomb, isRevealed, isFlagged are all false and neighborBombs is 0 to start
-- 5/24 SAT
-- Main
-    - Make a 2D array grid of tiles and display them in the correct order (grid.display())
-    - Draw
-- Grid
-    - Set the variables totalBombs and totalHidden(entire board)
-    - Display Method
-    - Place bombs (semi-randomly so the set number of bombs is evenly spread)
-        -  Track bomb count
-- Tile
-    - increment bomb count of neighbors
-    - Set isBomb to true
-- 5/28 WEDS
-- Main
-    - Mouseclicked
-        - Check xcor and ycor, divide by length, get index of 2D array
-        - Check if the tile at that index isBomb
-        - If isBomb, display game over screen
-        - If not isBomb, display neighborBombs
-        - Check if totalHidden == totalBombs, which in that case, display win screen
-    - keyPressed
-        - Reset the board and start new game if you press space
-        - Flag a tile is you press a specific key and click on it
-            - Tile: Set isFlagged to true
-            - Grid: display tile as flagged
-- Grid
-    - If firstClick, set to false and check if it isBomb
-    - If isBomb, editFirstBomb
-- 6/1 SUN
+Day 1-2: 
+- Tile & Grid constructors and variables made
+- setBombs will randomly set n bombs on the board (Person 1)
+- initialDisplay will draw a board of unrevealed tiles (Person 2)
 
+Day 3-4: 
+- setBombs will use setNeighbors to set the correct number on all tiles (Person 1)
+- revealTile will draw a revealed tile with the correct number of bomb neighbors when left clicked (Person 2)
+
+Day 5-6:
+- setBombs will use editFirstBomb when the first tile clicked is a bomb (Person 1)
+- flagTile will draw a flagged tile when an unrevealed tile is right clicked (Person 2)
+
+Day 7:
+- Bomb counter on the screen
+- Game reset when pressing space
+- revealTile has a death screen when revealing bomb (Person 2)
+
+Day 8+
+- Implementation of nice to have features
