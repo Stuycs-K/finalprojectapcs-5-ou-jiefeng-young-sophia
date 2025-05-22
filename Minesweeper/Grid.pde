@@ -12,4 +12,18 @@ public class Grid{
     totalHidden = size*size;
     firstClick = true;
   }
+  
+  private void setBombs(int bombs){
+    double density = totalBombs / totalHidden;
+    while(bombs > 0){
+      for(int r = 0; r < board.length; r++){
+        for(int c = 0; c < board[r].length; c++){
+          if(Math.random() < density){
+            board[r][c].isBomb = true;
+            bombs--;
+          }
+        }
+      }
+    }
+  }
 }
