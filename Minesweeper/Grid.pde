@@ -64,14 +64,27 @@ public class Grid{
       board[r + 1][c + 1].neighborBombs++;
     }
   }
-}
-
-void initialDisplay() {
-  for(int x = 0; x < width; x = x + sizeOfTile){
-    for(int y = 0; y < height; y = y + sizeOfTile){
-      fill(150, 250, 200); 
-      stroke(0);
-      square(x, y, sizeOfTile);
+  
+  void initialDisplay() {
+    for(int x = 0; x < width; x = x + sizeOfTile){
+      for(int y = 0; y < height; y = y + sizeOfTile){
+        fill(150, 250, 200); 
+        stroke(0);
+        square(x, y, sizeOfTile);
+      }
     }
+  }
+  void revealTile(int r, int c){
+    board[r][c].isRevealed = true;
+    fill(250, 250, 150); 
+    stroke(0);
+    square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+    
+  }
+  void flagTile(int r, int c){
+    board[r][c].isFlagged = true;
+    fill(250, 150, 150); 
+    stroke(0);
+    circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/3);
   }
 }
