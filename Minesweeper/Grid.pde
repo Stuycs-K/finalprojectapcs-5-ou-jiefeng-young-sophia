@@ -4,15 +4,24 @@ public class Grid{
   private int totalFlags;
   private int totalHidden;
   private boolean firstClick;
+  private int sizeOfTile;
   
-  public Grid(int size, int numBombs){
+  public Grid(int size, int numBombs, int tileSize){
     board = new Tile[size][size];
+    for(int r = 0; r < board.length; r++){
+        for(int c = 0; c < board[r].length; c++){
+          board[r][c] = new Tile();
+        }
+    }
+    
     totalBombs = numBombs;
     totalFlags = 0;
     totalHidden = size*size;
     firstClick = true;
-    
+    sizeOfTile = tileSize;
+
     setBombs(totalBombs);
+    System.out.println("HI");
   }
   
   private void setBombs(int bombs){
@@ -66,6 +75,7 @@ public class Grid{
   }
 
   public void initialDisplay() {
+    text("Width: " + width + " / sizeOfTile: " + sizeOfTile, 20, 20); 
     for(int x = 0; x < width; x = x + sizeOfTile){
       for(int y = 0; y < height; y = y + sizeOfTile){
         fill(150, 250, 200); 
@@ -73,6 +83,7 @@ public class Grid{
         square(x, y, sizeOfTile);
       }
     }
+    
   }
   
 }
