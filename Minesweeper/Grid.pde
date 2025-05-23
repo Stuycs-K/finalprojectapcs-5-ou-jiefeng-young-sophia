@@ -20,7 +20,7 @@ public class Grid{
     while(bombs > 0){
       for(int r = 0; r < board.length; r++){
         for(int c = 0; c < board[r].length; c++){
-          if(Math.random() < density){
+          if(Math.random() < density && board[r][c].isBomb == false){
             board[r][c].isBomb = true;
             bombs--;
             setNeighbors(r, c);
@@ -64,14 +64,15 @@ public class Grid{
       board[r + 1][c + 1].neighborBombs++;
     }
   }
-}
 
-void initialDisplay() {
-  for(int x = 0; x < width; x = x + sizeOfTile){
-    for(int y = 0; y < height; y = y + sizeOfTile){
-      fill(150, 250, 200); 
-      stroke(0);
-      square(x, y, sizeOfTile);
+  public void initialDisplay() {
+    for(int x = 0; x < width; x = x + sizeOfTile){
+      for(int y = 0; y < height; y = y + sizeOfTile){
+        fill(150, 250, 200); 
+        stroke(0);
+        square(x, y, sizeOfTile);
+      }
     }
   }
+  
 }
