@@ -10,4 +10,13 @@ public class Tile{
     isRevealed = false;
     isFlagged = false;
   }
+ /* void setIsRevealed(){
+    this.isRevealed = !isRevealed;
+  }
+  void setFlgged(){
+    this.isFlagged = !isFlagged;
+  }
+  void setBomb(){
+    this.isBomb = !isBomb;
+  }*/
 }

@@ -4,7 +4,9 @@ public class Grid{
   private int totalFlags;
   private int totalHidden;
   private boolean firstClick;
-  private int sizeOfTile;
+  private color GREEN = color(150, 250, 200);
+  private color RED = color(250, 150, 150);
+  private color YELLOW = color(250, 250, 150);
   
   public Grid(int size, int numBombs, int tileSize){
     board = new Tile[size][size];
@@ -18,13 +20,12 @@ public class Grid{
     totalFlags = 0;
     totalHidden = size*size;
     firstClick = true;
-    sizeOfTile = tileSize;
-
-    setBombs(totalBombs);
-    System.out.println("HI");
+    
+    //setBombs(totalBombs);
   }
   
   private void setBombs(int bombs){
+    //int currBombs = bombs;
     double density = totalBombs / totalHidden;
     while(bombs > 0){
       for(int r = 0; r < board.length; r++){
@@ -33,6 +34,7 @@ public class Grid{
             board[r][c].isBomb = true;
             bombs--;
             setNeighbors(r, c);
+            if(bombs == 0) return;
           }
         }
       }
@@ -73,17 +75,38 @@ public class Grid{
       board[r + 1][c + 1].neighborBombs++;
     }
   }
-
-  public void initialDisplay() {
-    text("Width: " + width + " / sizeOfTile: " + sizeOfTile, 20, 20); 
+  
+  void initialDisplay() {
     for(int x = 0; x < width; x = x + sizeOfTile){
       for(int y = 0; y < height; y = y + sizeOfTile){
-        fill(150, 250, 200); 
+        fill(GREEN); 
         stroke(0);
         square(x, y, sizeOfTile);
       }
     }
-    
   }
   
+  void revealTile(int r, int c){
+    //board[r][c].isRevealed = true;
+    fill(YELLOW); 
+    stroke(0);
+    square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+    
+  }
+  void flagTile(int r, int c){
+    board[r][c].isFlagged = !(board[r][c].isFlagged);
+    if(board[r][c].isFlagged == true){
+      fill(RED); 
+      stroke(0);
+      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/2);
+
+    }
+    else{
+      fill(GREEN);
+      stroke(GREEN);
+      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/2+3);
+
+    }
+   
+  }
 }
