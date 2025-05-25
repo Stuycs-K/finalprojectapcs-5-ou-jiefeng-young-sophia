@@ -7,6 +7,7 @@ public class Grid{
   private color GREEN = color(150, 250, 200);
   private color RED = color(250, 150, 150);
   private color YELLOW = color(250, 250, 150);
+  private color BLACK = color(0, 0, 0);
   
   public Grid(int size, int numBombs){
     board = new Tile[size][size];
@@ -88,10 +89,22 @@ public class Grid{
   
   void revealTile(int r, int c){
     board[r][c].isRevealed = true;
-    fill(YELLOW); 
-    stroke(0);
-    square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
-    
+    if(!board[r][c].isBomb){ //if it's not a bomb:
+      fill(YELLOW); 
+      stroke(0);
+      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      
+      fill(BLACK);
+      textSize(40);
+      textAlign(CENTER);
+      text(board[r][c].neighborBombs, c * sizeOfTile + sizeOfTile/2.0, r * sizeOfTile + sizeOfTile/1.5);
+      textSize(10);
+    }
+    else{ //if it is a bomb
+      fill(RED); 
+      stroke(0);
+      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+    }
   }
   
   void flagTile(int r, int c){
