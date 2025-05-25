@@ -1,9 +1,10 @@
-private int sizeOfTile = 50; // is placeholder value
+private int sizeOfTile = 50;
+private int bombs = 50;
 private Grid game;
 
 void setup(){
   size(800, 800);
-  game = new Grid(width/sizeOfTile, 50);
+  game = new Grid(width/sizeOfTile, bombs);
   game.initialDisplay();
 }
 void draw(){

@@ -7,33 +7,33 @@ public class Grid{
   private color GREEN = color(150, 250, 200);
   private color RED = color(250, 150, 150);
   private color YELLOW = color(250, 250, 150);
+  private color BLACK = color(0, 0, 0);
   
   public Grid(int size, int numBombs){
     board = new Tile[size][size];
-    for(int i = 0; i < board.length; i++){
-      for(int j = 0; j < board[0].length; j++){
-        board[i][j] = new Tile();
-      }
+    for(int r = 0; r < board.length; r++){
+        for(int c = 0; c < board[r].length; c++){
+          board[r][c] = new Tile();
+        }
     }
+    
     totalBombs = numBombs;
     totalFlags = 0;
     totalHidden = size*size;
     firstClick = true;
     
-    //setBombs(totalBombs);
+    setBombs(totalBombs);
   }
   
   private void setBombs(int bombs){
-    //int currBombs = bombs;
-    double density = totalBombs / totalHidden;
+    double density = (double) totalBombs / totalHidden;
     while(bombs > 0){
       for(int r = 0; r < board.length; r++){
         for(int c = 0; c < board[r].length; c++){
-          if(Math.random() < density){
+          if(Math.random() < density && board[r][c].isBomb == false){
             board[r][c].isBomb = true;
-            bombs--;
             setNeighbors(r, c);
-            if(bombs == 0) return;
+            bombs--;
           }
         }
       }
@@ -75,6 +75,7 @@ public class Grid{
     }
   }
   
+  
   void initialDisplay() {
     for(int x = 0; x < width; x = x + sizeOfTile){
       for(int y = 0; y < height; y = y + sizeOfTile){
@@ -84,19 +85,31 @@ public class Grid{
       }
     }
   }
+  
   void revealTile(int r, int c){
     board[r][c].isRevealed = true;
-    fill(YELLOW); 
-    stroke(0);
-    square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
-    fill(0);
-    textSize(sizeOfTile*0.7);
-    text("" + board[r][c].neighborBombs, (c+0.3) * sizeOfTile, (r+0.8) * sizeOfTile);
-    
+    if(!board[r][c].isBomb){ //if it's not a bomb:
+      fill(YELLOW); 
+      stroke(0);
+      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      
+      fill(BLACK);
+      textSize(sizeOfTile/1.5);
+      textAlign(CENTER);
+      text(board[r][c].neighborBombs, c * sizeOfTile + sizeOfTile/2.0, r * sizeOfTile + sizeOfTile/1.5);
+      
+      textSize(10);
+    }
+    else{ //if it is a bomb
+      fill(RED); 
+      stroke(0);
+      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+    }
   }
+  
   void flagTile(int r, int c){
-    board[r][c].isFlagged = !(board[r][c].isFlagged);
-    if(board[r][c].isFlagged == true && board[r][c].isRevealed == false){
+    board[r][c].isFlagged = !(board[r][c].isFlagged) && !(board[r][c].isRevealed);
+    if(board[r][c].isFlagged == true){
       fill(RED); 
       stroke(0);
       circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/2);

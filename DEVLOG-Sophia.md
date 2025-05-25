@@ -2,9 +2,7 @@
 
 This document must be updated daily every time you finish a work session.
 
-## Dave Kim CHANGE THE NAME FOOL!
-## Sophia Young (Not Dave Kim)
-- I don't want to rename and it screws something up, I'll figure that out later.
+## Sophia Young
 
 ### 2025-05-23 - Brief description
 Expanded description including how much time was spent on task.
