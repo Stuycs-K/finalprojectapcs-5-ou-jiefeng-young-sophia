@@ -8,7 +8,7 @@ public class Grid{
   private color RED = color(250, 150, 150);
   private color YELLOW = color(250, 250, 150);
   
-  public Grid(int size, int numBombs, int tileSize){
+  public Grid(int size, int numBombs){
     board = new Tile[size][size];
     for(int r = 0; r < board.length; r++){
         for(int c = 0; c < board[r].length; c++){
@@ -21,20 +21,19 @@ public class Grid{
     totalHidden = size*size;
     firstClick = true;
     
-    //setBombs(totalBombs);
+    setBombs(totalBombs);
   }
   
   private void setBombs(int bombs){
     //int currBombs = bombs;
-    double density = totalBombs / totalHidden;
+    double density = (double) totalBombs / totalHidden;
     while(bombs > 0){
       for(int r = 0; r < board.length; r++){
         for(int c = 0; c < board[r].length; c++){
           if(Math.random() < density && board[r][c].isBomb == false){
             board[r][c].isBomb = true;
+            //setNeighbors(r, c);
             bombs--;
-            setNeighbors(r, c);
-            if(bombs == 0) return;
           }
         }
       }
