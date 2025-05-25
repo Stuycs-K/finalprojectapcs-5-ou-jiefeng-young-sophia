@@ -1,5 +1,5 @@
-private int sizeOfTile = 400;
-private int bombs = 3;
+private int sizeOfTile = 50;
+private int bombs = 25;
 private Grid game;
 
 void setup(){
