@@ -13,8 +13,10 @@ This document must be updated daily every time you finish a work session.
 - Fixed a bug in setBombs where a bomb could be set on a tile that was already a bomb, and therefore having less bombs on the board than expected: 2 minutes
 - Worked on fixing a bug where initialDisplay, when moved from the Main to the Grid class, would not... display (unfinished): 35 minutes
 
-### 2025-05-25 - Brief description
+### 2025-05-25 - Bug fixing & Finishing revealTile and flagTile
 - Worked on typing up the DEVLOG: 10 minutes
 - Fixed a bug in setBombs where density would always be 0.0, thus making an infinite loop: 10 minutes
 - Fixed a bug in flagTile where revealed tiles could also be flagged: 5 minutes
 - The tiles revealed in revealTile now display the correct tile info and displays whether or not they're a bomb: 15 minutes
+- Added bomb instance variable to Main because the number of bombs is one of the game setups: 5 minutes
+- revealTile no longer reveals flagged tiles, and flagTile unflags a flagged tile: 10 minutes
