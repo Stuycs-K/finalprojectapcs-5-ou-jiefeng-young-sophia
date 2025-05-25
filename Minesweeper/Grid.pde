@@ -95,9 +95,10 @@ public class Grid{
       square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
       
       fill(BLACK);
-      textSize(40);
+      textSize(sizeOfTile/1.5);
       textAlign(CENTER);
       text(board[r][c].neighborBombs, c * sizeOfTile + sizeOfTile/2.0, r * sizeOfTile + sizeOfTile/1.5);
+      
       textSize(10);
     }
     else{ //if it is a bomb
