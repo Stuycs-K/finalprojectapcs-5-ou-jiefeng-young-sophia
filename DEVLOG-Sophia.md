@@ -17,7 +17,8 @@ Expanded description including how much time was spent on task.
 - Afternoon 5 reveal and flag work, yay
 
 ### 2025-05-25 - Brief description
-- made flag only work on not revealed tiles
+- made flag only work on not revealed tiles (jeff beat me to the punch, thanks jeff)
+- space reset
 ### 2025-05-03 - Brief description
 ### 2025-05-03 - Brief description
 ### 2025-05-03 - Brief description
