@@ -85,21 +85,24 @@ public class Grid{
     }
   }
   void revealTile(int r, int c){
-    //board[r][c].isRevealed = true;
+    board[r][c].isRevealed = true;
     fill(YELLOW); 
     stroke(0);
     square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+    fill(0);
+    textSize(sizeOfTile*0.7);
+    text("" + board[r][c].neighborBombs, (c+0.3) * sizeOfTile, (r+0.8) * sizeOfTile);
     
   }
   void flagTile(int r, int c){
     board[r][c].isFlagged = !(board[r][c].isFlagged);
-    if(board[r][c].isFlagged == true){
+    if(board[r][c].isFlagged == true && board[r][c].isRevealed == false){
       fill(RED); 
       stroke(0);
       circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/2);
 
     }
-    else{
+    else if(board[r][c].isFlagged == false && board[r][c].isRevealed == false){
       fill(GREEN);
       stroke(GREEN);
       circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/2+3);
