@@ -32,7 +32,7 @@ public class Grid{
         for(int c = 0; c < board[r].length; c++){
           if(Math.random() < density && board[r][c].isBomb == false){
             board[r][c].isBomb = true;
-            //setNeighbors(r, c);
+            setNeighbors(r, c);
             bombs--;
           }
         }
@@ -75,6 +75,7 @@ public class Grid{
     }
   }
   
+  
   void initialDisplay() {
     for(int x = 0; x < width; x = x + sizeOfTile){
       for(int y = 0; y < height; y = y + sizeOfTile){
@@ -86,26 +87,20 @@ public class Grid{
   }
   
   void revealTile(int r, int c){
-    //board[r][c].isRevealed = true;
+    board[r][c].isRevealed = true;
     fill(YELLOW); 
     stroke(0);
     square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
     
   }
+  
   void flagTile(int r, int c){
-    board[r][c].isFlagged = !(board[r][c].isFlagged);
+    board[r][c].isFlagged = !(board[r][c].isFlagged) && !(board[r][c].isRevealed);
     if(board[r][c].isFlagged == true){
       fill(RED); 
       stroke(0);
       circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/2);
 
     }
-    else{
-      fill(GREEN);
-      stroke(GREEN);
-      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/2+3);
-
-    }
-   
   }
 }
