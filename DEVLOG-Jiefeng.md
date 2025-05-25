@@ -16,3 +16,5 @@ This document must be updated daily every time you finish a work session.
 ### 2025-05-25 - Brief description
 - Worked on typing up the DEVLOG: 10 minutes
 - Fixed a bug in setBombs where density would always be 0.0, thus making an infinite loop: 10 minutes
+- Fixed a bug in flagTile where revealed tiles could also be flagged: 5 minutes
+- The tiles revealed in revealTile now display the correct tile info and displays whether or not they're a bomb: 15 minutes
