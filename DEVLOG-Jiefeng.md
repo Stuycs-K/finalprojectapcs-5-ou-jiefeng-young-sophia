@@ -20,3 +20,4 @@ This document must be updated daily every time you finish a work session.
 - The tiles revealed in revealTile now display the correct tile info and displays whether or not they're a bomb: 15 minutes
 - Added bomb instance variable to Main because the number of bombs is one of the game setups: 5 minutes
 - revealTile no longer reveals flagged tiles, and flagTile unflags a flagged tile: 10 minutes
+- Added editFirstBomb that correctly sets a different tile to a bomb while setting the tile clicked to a safe tile: 20-30 minutes 

@@ -31,9 +31,10 @@ public class Grid{
     while(bombs > 0){
       for(int r = 0; r < board.length; r++){
         for(int c = 0; c < board[r].length; c++){
-          if(Math.random() < density && board[r][c].isBomb == false){
+          double rand = Math.random();
+          if(rand < density && board[r][c].isBomb == false && bombs > 0){
             board[r][c].isBomb = true;
-            setNeighbors(r, c);
+            setNeighbors(r, c, 1);
             bombs--;
           }
         }
@@ -41,41 +42,50 @@ public class Grid{
     }
   }
   
-  private void setNeighbors(int r, int c){
+  private void setNeighbors(int r, int c, int increment){
     //top left
     if(r - 1 >= 0 && c - 1 >= 0){
-      board[r - 1][c - 1].neighborBombs++;
+      board[r - 1][c - 1].neighborBombs += increment;
     }
     //top middle
     if(r - 1 >= 0){
-      board[r - 1][c].neighborBombs++;
+      board[r - 1][c].neighborBombs += increment;
     }
     //top right
     if(r - 1 >= 0 && c + 1 < board[r].length){
-      board[r - 1][c + 1].neighborBombs++;
+      board[r - 1][c + 1].neighborBombs += increment;
     }
     //middle left
     if(c - 1 >= 0){
-      board[r][c - 1].neighborBombs++;
+      board[r][c - 1].neighborBombs += increment;
     }
     //middle right
     if(c + 1 < board[r].length){
-      board[r][c + 1].neighborBombs++;
+      board[r][c + 1].neighborBombs += increment;
     }
     //bottom left
     if(r + 1 < board.length && c - 1 >= 0){
-      board[r + 1][c - 1].neighborBombs++;
+      board[r + 1][c - 1].neighborBombs += increment;
     }
     //bottom middle
     if(r + 1 < board.length){
-      board[r + 1][c].neighborBombs++;
+      board[r + 1][c].neighborBombs += increment;
     }
     //bottom right
     if(r + 1 < board.length && c + 1 < board[r].length){
-      board[r + 1][c + 1].neighborBombs++;
+      board[r + 1][c + 1].neighborBombs += increment;
     }
   }
   
+  private void editFirstBomb(int r, int c){
+    //precondition: tile is a bomb
+    while(board[r][c].isBomb){
+      setNeighbors(r, c, -1);
+      setBombs(1);
+      board[r][c].isBomb = false;
+      firstClick = false;
+    }
+  }
   
   void initialDisplay() {
     for(int x = 0; x < width; x = x + sizeOfTile){
@@ -89,6 +99,10 @@ public class Grid{
   
   void revealTile(int r, int c){
     board[r][c].isRevealed = !(board[r][c].isFlagged);
+    if(board[r][c].isBomb && board[r][c].isRevealed && firstClick){
+      editFirstBomb(r,c);
+    }
+    
     if(!board[r][c].isBomb && board[r][c].isRevealed){ //if it's not a bomb:
       fill(YELLOW); 
       stroke(0);
@@ -106,6 +120,8 @@ public class Grid{
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
     }
+    
+    firstClick = false;
   }
   
   void flagTile(int r, int c){
