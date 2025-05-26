@@ -20,5 +20,6 @@ Expanded description including how much time was spent on task.
 - made flag only work on not revealed tiles (jeff beat me to the punch, thanks jeff)
 - space reset
 ### 2025-05-03 - Brief description
+- added temp. death screen
 ### 2025-05-03 - Brief description
 ### 2025-05-03 - Brief description

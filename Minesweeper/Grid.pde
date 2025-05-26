@@ -119,6 +119,12 @@ public class Grid{
       fill(RED); 
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      //(temporary) death screen, we can do a fancy one if we have time
+      rect(0, 0, width, height);
+      fill(BLACK);
+      textSize(width/4);
+      textAlign(CENTER);
+      text("YOU\nDIED", width/2.0, height/2);
     }
     
     firstClick = false;
