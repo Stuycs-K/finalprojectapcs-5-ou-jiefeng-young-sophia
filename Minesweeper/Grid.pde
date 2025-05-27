@@ -78,8 +78,10 @@ public class Grid{
   
   
   void initialDisplay() {
+    fill(250, 220, 150);
+    rect(0, 0, width, bannerHeight);
     for(int x = 0; x < width; x = x + sizeOfTile){
-      for(int y = 0; y < height; y = y + sizeOfTile){
+      for(int y = bannerHeight; y < height; y = y + sizeOfTile){
         fill(GREEN); 
         stroke(0);
         square(x, y, sizeOfTile);
@@ -92,19 +94,19 @@ public class Grid{
     if(!board[r][c].isBomb && board[r][c].isRevealed){ //if it's not a bomb:
       fill(YELLOW); 
       stroke(0);
-      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
       
       fill(BLACK);
       textSize(sizeOfTile/1.5);
       textAlign(CENTER);
-      text(board[r][c].neighborBombs, c * sizeOfTile + sizeOfTile/2.0, r * sizeOfTile + sizeOfTile/1.5);
+      text(board[r][c].neighborBombs, c * sizeOfTile + sizeOfTile/2.0, r * sizeOfTile + sizeOfTile/1.5 + bannerHeight);
       
       textSize(10);
     }
     else if(board[r][c].isRevealed){ //if it is a bomb
       fill(RED); 
       stroke(0);
-      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
     }
   }
   
@@ -113,12 +115,12 @@ public class Grid{
     if(board[r][c].isFlagged == true){
       fill(RED); 
       stroke(0);
-      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/2);
+      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
     }
     else if(!board[r][c].isRevealed){
       fill(GREEN);
       stroke(0);
-      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
     }
   }
 }
