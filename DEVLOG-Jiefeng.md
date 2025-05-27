@@ -22,5 +22,5 @@ This document must be updated daily every time you finish a work session.
 - revealTile no longer reveals flagged tiles, and flagTile unflags a flagged tile: 10 minutes
 - Added editFirstBomb that correctly sets a different tile to a bomb while setting the tile clicked to a safe tile: 20-30 minutes
 
-### 2025-05-26 - revealNeighbors
+### 2025-05-27 - revealNeighbors
 - Added revealNeighbors, a helper method that automatically reveals all tiles around (c, r) that is called whenever the tile at (c, r) has no bomb neighbors: 15 minutes
