@@ -1,5 +1,5 @@
 private int sizeOfTile = 50;
-private int bombs = 50;
+private int bombs = 25;
 private Grid game;
 private int bannerHeight = 100;
 
