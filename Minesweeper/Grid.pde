@@ -107,7 +107,6 @@ public class Grid{
       fill(YELLOW); 
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
-      println(r + ", " + c);
       revealNeighbors(r,c);
     }
     else if(!board[r][c].isBomb && board[r][c].isRevealed){ //if it's not a bomb:
