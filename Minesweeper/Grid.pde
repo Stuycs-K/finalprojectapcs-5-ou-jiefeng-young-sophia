@@ -105,7 +105,13 @@ public class Grid{
       editFirstBomb(r,c);
     }
     
-    if(!board[r][c].isBomb && board[r][c].isRevealed){ //if it's not a bomb:
+    if(!board[r][c].isBomb && board[r][c].isRevealed && board[r][c].neighborBombs == 0){ //if its a tile with 0 bomb neighbors
+      fill(YELLOW); 
+      stroke(0);
+      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      revealNeighbors(r,c);
+    }
+    else if(!board[r][c].isBomb && board[r][c].isRevealed){ //if it's not a bomb:
       fill(YELLOW); 
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
@@ -124,6 +130,41 @@ public class Grid{
     }
     
     firstClick = false;
+  }
+  
+  private void revealNeighbors(int r, int c){ //only nonrevealed neighbors are affected
+    //top left
+    if(r - 1 >= 0 && c - 1 >= 0 && !board[r-1][c-1].isRevealed){
+      revealTile(r - 1, c - 1);
+    }
+    //top middle
+    if(r - 1 >= 0 && !board[r-1][c].isRevealed){
+      revealTile(r - 1, c);
+    }
+    //top right
+    if(r - 1 >= 0 && c + 1 < board[r].length && !board[r-1][c+1].isRevealed){
+      revealTile(r - 1, c + 1);
+    }
+    //middle left
+    if(c - 1 >= 0 && !board[r][c-1].isRevealed){
+      revealTile(r, c - 1);
+    }
+    //middle right
+    if(c + 1 < board[r].length && !board[r][c+1].isRevealed){
+      revealTile(r, c + 1);
+    }
+    //bottom left
+    if(r + 1 < board.length && c - 1 >= 0 && !board[r+1][c-1].isRevealed){
+      revealTile(r + 1, c - 1);
+    }
+    //bottom middle
+    if(r + 1 < board.length && !board[r+1][c].isRevealed){
+      revealTile(r + 1, c);
+    }
+    //bottom right
+    if(r + 1 < board.length && c + 1 < board[r].length && !board[r+1][c+1].isRevealed){
+      revealTile(r + 1, c + 1);
+    }
   }
   
   void flagTile(int r, int c){
