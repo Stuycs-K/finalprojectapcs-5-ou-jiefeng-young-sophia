@@ -88,10 +88,8 @@ public class Grid{
   }
   
   void initialDisplay() {
-    fill(250, 220, 150);
-    rect(0, 0, width, bannerHeight);
     for(int x = 0; x < width; x = x + sizeOfTile){
-      for(int y = bannerHeight; y < height; y = y + sizeOfTile){
+      for(int y = 0; y < height; y = y + sizeOfTile){
         fill(GREEN); 
         stroke(0);
         square(x, y, sizeOfTile);
@@ -108,7 +106,7 @@ public class Grid{
     if(!board[r][c].isBomb && board[r][c].isRevealed && board[r][c].neighborBombs == 0){ //if its a tile with 0 bomb neighbors
       fill(YELLOW); 
       stroke(0);
-      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
       revealNeighbors(r,c);
     }
     else if(!board[r][c].isBomb && board[r][c].isRevealed){ //if it's not a bomb:
