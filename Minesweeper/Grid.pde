@@ -4,6 +4,7 @@ public class Grid{
   private int totalFlags;
   private int totalHidden;
   private boolean firstClick;
+  private boolean isDead;
   private color GREEN = color(150, 250, 200);
   private color RED = color(250, 150, 150);
   private color YELLOW = color(250, 250, 150);
@@ -125,6 +126,7 @@ public class Grid{
       fill(RED); 
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      isDead = true;
     }
     
     firstClick = false;
@@ -176,6 +178,16 @@ public class Grid{
       fill(GREEN);
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+    }
+  }
+  
+  public void deathScreen(){
+    for(int r = 0; r < board.length; r++){
+      for(int c = 0; c < board[r].length; c++){
+        if(board[r][c].isBomb){
+          revealTile(r, c);
+        }
+      }
     }
   }
 }

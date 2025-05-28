@@ -16,6 +16,9 @@ void mousePressed(){
   fill(0);
   if(mouseButton == LEFT){
     game.revealTile(r, c);
+    if(game.isDead){
+      game.deathScreen();
+    }
   }
   else if(mouseButton == RIGHT){
     game.flagTile(r, c);
