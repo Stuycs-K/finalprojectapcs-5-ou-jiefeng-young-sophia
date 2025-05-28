@@ -88,8 +88,10 @@ public class Grid{
   }
   
   void initialDisplay() {
+    fill(250, 190, 120);
+    rect(0, 0, width, bannerHeight);
     for(int x = 0; x < width; x = x + sizeOfTile){
-      for(int y = 0; y < height; y = y + sizeOfTile){
+      for(int y = bannerHeight; y < height; y = y + sizeOfTile){
         fill(GREEN); 
         stroke(0);
         square(x, y, sizeOfTile);
