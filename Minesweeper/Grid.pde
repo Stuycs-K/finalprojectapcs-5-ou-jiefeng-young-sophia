@@ -88,8 +88,10 @@ public class Grid{
   }
   
   void initialDisplay() {
+    fill(250, 220, 150);
+    rect(0, 0, width, bannerHeight);
     for(int x = 0; x < width; x = x + sizeOfTile){
-      for(int y = 0; y < height; y = y + sizeOfTile){
+      for(int y = bannerHeight; y < height; y = y + sizeOfTile){
         fill(GREEN); 
         stroke(0);
         square(x, y, sizeOfTile);
@@ -103,31 +105,66 @@ public class Grid{
       editFirstBomb(r,c);
     }
     
-    if(!board[r][c].isBomb && board[r][c].isRevealed){ //if it's not a bomb:
+    if(!board[r][c].isBomb && board[r][c].isRevealed && board[r][c].neighborBombs == 0){ //if its a tile with 0 bomb neighbors
       fill(YELLOW); 
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      revealNeighbors(r,c);
+    }
+    else if(!board[r][c].isBomb && board[r][c].isRevealed){ //if it's not a bomb:
+      fill(YELLOW); 
+      stroke(0);
+      square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
       
       fill(BLACK);
       textSize(sizeOfTile/1.5);
       textAlign(CENTER);
-      text(board[r][c].neighborBombs, c * sizeOfTile + sizeOfTile/2.0, r * sizeOfTile + sizeOfTile/1.5);
+      text(board[r][c].neighborBombs, c * sizeOfTile + sizeOfTile/2.0, r * sizeOfTile + sizeOfTile/1.5 + bannerHeight);
       
       textSize(10);
     }
     else if(board[r][c].isRevealed){ //if it is a bomb
       fill(RED); 
       stroke(0);
-      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
-      //(temporary) death screen, we can do a fancy one if we have time
-      rect(0, 0, width, height);
-      fill(BLACK);
-      textSize(width/4);
-      textAlign(CENTER);
-      text("YOU\nDIED", width/2.0, height/2);
+      square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
     }
     
     firstClick = false;
+  }
+  
+  private void revealNeighbors(int r, int c){ //only nonrevealed neighbors are affected
+    //top left
+    if(r - 1 >= 0 && c - 1 >= 0 && !board[r-1][c-1].isRevealed){
+      revealTile(r - 1, c - 1);
+    }
+    //top middle
+    if(r - 1 >= 0 && !board[r-1][c].isRevealed){
+      revealTile(r - 1, c);
+    }
+    //top right
+    if(r - 1 >= 0 && c + 1 < board[r].length && !board[r-1][c+1].isRevealed){
+      revealTile(r - 1, c + 1);
+    }
+    //middle left
+    if(c - 1 >= 0 && !board[r][c-1].isRevealed){
+      revealTile(r, c - 1);
+    }
+    //middle right
+    if(c + 1 < board[r].length && !board[r][c+1].isRevealed){
+      revealTile(r, c + 1);
+    }
+    //bottom left
+    if(r + 1 < board.length && c - 1 >= 0 && !board[r+1][c-1].isRevealed){
+      revealTile(r + 1, c - 1);
+    }
+    //bottom middle
+    if(r + 1 < board.length && !board[r+1][c].isRevealed){
+      revealTile(r + 1, c);
+    }
+    //bottom right
+    if(r + 1 < board.length && c + 1 < board[r].length && !board[r+1][c+1].isRevealed){
+      revealTile(r + 1, c + 1);
+    }
   }
   
   void flagTile(int r, int c){
@@ -135,12 +172,12 @@ public class Grid{
     if(board[r][c].isFlagged == true){
       fill(RED); 
       stroke(0);
-      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2), sizeOfTile/2);
+      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
     }
     else if(!board[r][c].isRevealed){
       fill(GREEN);
       stroke(0);
-      square(c * sizeOfTile, r * sizeOfTile, sizeOfTile);
+      square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
     }
   }
 }
