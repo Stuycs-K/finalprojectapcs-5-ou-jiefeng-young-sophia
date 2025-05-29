@@ -5,10 +5,17 @@ private int bannerHeight = 100;
 
 void setup(){
   size(800, 900);
-  game = new Grid(width/sizeOfTile, bombs);
-  game.initialDisplay();
+  mainMenu();
+  //game = new Grid(width/sizeOfTile, bombs);
+  //game.initialDisplay();
 }
 void draw(){
+}
+
+void mainMenu(){
+  textSize(100);
+  textAlign(CENTER);
+  text("Minesweeper", 400, 200);
 }
 
 void mousePressed(){
@@ -18,6 +25,9 @@ void mousePressed(){
     fill(0);
     if(mouseButton == LEFT){
       game.revealTile(r, c);
+      if(game.isDead){
+        game.deathScreen();
+      }
     }
     else if(mouseButton == RIGHT){
       game.flagTile(r, c);
