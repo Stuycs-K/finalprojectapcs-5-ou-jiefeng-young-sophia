@@ -113,7 +113,6 @@ public class Grid{
     board[r][c].isRevealed = !(board[r][c].isFlagged);
     if(board[r][c].isBomb && board[r][c].isRevealed && firstClick){
       editFirstBomb(r,c);
-      revealFirstNeighbors(r, c);
     }
 
     if(!board[r][c].isBomb && board[r][c].isRevealed && board[r][c].neighborBombs == 0){ //if its a tile with 0 bomb neighbors
