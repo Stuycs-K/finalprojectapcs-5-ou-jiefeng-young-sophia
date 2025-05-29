@@ -15,7 +15,7 @@ void mousePressed(){
   if(mouseY > bannerHeight){
     int c = mouseX / sizeOfTile;
     int r = (mouseY - bannerHeight)/ sizeOfTile;
-    fill(0);
+   // fill(0);
     if(mouseButton == LEFT){
       game.revealTile(r, c);
     }
