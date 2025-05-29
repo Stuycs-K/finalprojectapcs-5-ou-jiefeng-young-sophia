@@ -105,9 +105,7 @@ public class Grid{
     fill(0);
     textAlign(CENTER);
     textSize(30);
-    text("Total Bombs: " + totalBombs, width*0.2, bannerHeight/2);
-    text("Total Hidden: " + totalHidden, width*0.5, bannerHeight/2);
-    text("Total Flags: " + totalFlags, width*0.8, bannerHeight/2);
+    text("Flags: " + (totalBombs-totalFlags), width*0.5, bannerHeight/2);
   }
   
   void revealTile(int r, int c){
@@ -139,7 +137,7 @@ public class Grid{
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
     }
-    
+    totalHidden--;
     firstClick = false;
   }
   
