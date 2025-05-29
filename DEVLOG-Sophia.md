@@ -19,6 +19,9 @@ Expanded description including how much time was spent on task.
 ### 2025-05-25 - Brief description
 - made flag only work on not revealed tiles (jeff beat me to the punch, thanks jeff)
 - space reset
-### 2025-05-03 - Brief description
-### 2025-05-03 - Brief description
-### 2025-05-03 - Brief description
+### 2025-05-27 - Brief description
+- added a banner
+### 2025-05-28 - Brief description
+- added a banner and didn't break the rest on my code
+### 2025-05-29 - Brief description
+- 3am, made the banner display words, fixed a bug in flag method because forgot to increment and decrement totalFlag
