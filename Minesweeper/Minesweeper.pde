@@ -46,11 +46,21 @@ void selectionMenu(){
   fill(255);
   rect(0, 0, width, height);
   
+  fill(0);
+  textSize(100);
+  textAlign(CENTER);
+  text("Selection", 400, 200); 
+  
   fill(250, 250, 150);
   rect(25, 500, 125, 250); //easy
   rect(225, 500, 125, 250); //medium
   rect(425, 500, 125, 250); //hard
   rect(625, 500, 125, 250); //custom
+  
+  fill(0);
+  textSize(25);
+  textAlign(CENTER);
+  text("Easy", 25, 500); 
 }
 
 void selectionPressed(){
