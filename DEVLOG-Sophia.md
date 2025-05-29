@@ -25,3 +25,9 @@ Expanded description including how much time was spent on task.
 - added a banner and didn't break the rest on my code
 ### 2025-05-29 - Brief description
 - 3am, made the banner display words, fixed a bug in flag method because forgot to increment and decrement totalFlag
+- class, banner only displays bombs-flags, like google version
+### 2025-05-29 - Brief description
+### 2025-05-29 - Brief description
+### 2025-05-29 - Brief description
+### 2025-05-29 - Brief description
+### 2025-05-29 - Brief description
