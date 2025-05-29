@@ -6,14 +6,26 @@ private int page = 0;
 
 void setup(){
   size(800, 900);
-  mainMenu();
+  menuSetup();
   //game = new Grid(width/sizeOfTile, bombs);
   //game.initialDisplay();
 }
 void draw(){
 }
 
-void mainMenu(){
+void mousePressed(){
+  if(page == 0){
+    menuPressed();
+  }
+  if(page == 1){
+    selectionPressed();
+  }
+  if(page == 2){
+    gamePressed();
+  }
+}
+
+void menuSetup(){
   textSize(100);
   textAlign(CENTER);
   text("Minesweeper", 400, 200);
@@ -23,19 +35,26 @@ void mainMenu(){
   text("PLAY", 400, 500); 
 }
 
-void mousePressed(){
-  if(page == 0){
-    menuPressed();
-  }
-  if(page == 2){
-    gamePressed();
+void menuPressed(){
+  if(300 < mouseX && mouseX < 500 && 450 < mouseY && mouseY < 550){
+    selectionMenu();
+    page++;
   }
 }
 
-void menuPressed(){
-  if(300 < mouseX && mouseX < 500 && 450 < mouseY && mouseY < 550){
-    page++;
-  }
+void selectionMenu(){
+  fill(255);
+  rect(0, 0, width, height);
+  
+  fill(250, 250, 150);
+  rect(25, 500, 125, 250); //easy
+  rect(225, 500, 125, 250); //medium
+  rect(425, 500, 125, 250); //hard
+  rect(625, 500, 125, 250); //custom
+}
+
+void selectionPressed(){
+  
 }
 
 void gamePressed(){
