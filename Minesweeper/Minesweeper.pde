@@ -23,6 +23,7 @@ void mousePressed(){
       game.flagTile(r, c);
     }
   }
+  game.editBanner();
 }
 
 void keyPressed(){

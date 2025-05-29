@@ -99,6 +99,17 @@ public class Grid{
     }
   }
   
+  void editBanner(){
+    fill(250, 190, 120);
+    rect(0, 0, width, bannerHeight);
+    fill(0);
+    textAlign(CENTER);
+    textSize(30);
+    text("Total Bombs: " + totalBombs, width*0.2, bannerHeight/2);
+    text("Total Hidden: " + totalHidden, width*0.5, bannerHeight/2);
+    text("Total Flags: " + totalFlags, width*0.8, bannerHeight/2);
+  }
+  
   void revealTile(int r, int c){
     board[r][c].isRevealed = !(board[r][c].isFlagged);
     if(board[r][c].isBomb && board[r][c].isRevealed && firstClick){
@@ -173,11 +184,13 @@ public class Grid{
       fill(RED); 
       stroke(0);
       circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
+      totalFlags++;
     }
     else if(!board[r][c].isRevealed){
       fill(GREEN);
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
+      totalFlags--;
     }
   }
 }
