@@ -202,5 +202,6 @@ public class Grid{
         }
       }
     }
+    page = 4; //unless you want to keep pressing, in which case delete
   }
 }
