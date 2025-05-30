@@ -7,7 +7,7 @@ public class Grid{
   private boolean isDead;
   private color GREEN = color(150, 250, 200);
   private color RED = color(250, 150, 150);
-  private color YELLOW = color(250, 250, 150);
+  private color TAN = color(255, 220, 150);
   private color BLACK = color(0, 0, 0);
 
   public Grid(int size, int numBombs){
@@ -116,17 +116,26 @@ public class Grid{
     }
 
     if(!board[r][c].isBomb && board[r][c].isRevealed && board[r][c].neighborBombs == 0){ //if its a tile with 0 bomb neighbors
-      fill(YELLOW);
+      fill(TAN);
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
       revealNeighbors(r,c);
     }
     else if(!board[r][c].isBomb && board[r][c].isRevealed){ //if it's not a bomb:
-      fill(YELLOW);
+      fill(TAN);
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
 
-      fill(BLACK);
+      int num = board[r][c].neighborBombs;
+      if(num == 1) fill(50, 100, 250);
+      else if(num == 1) fill(50, 100, 250); // blue
+      else if(num == 2) fill(0, 200, 50); // green
+      else if(num == 3) fill(200, 0, 0); // red
+      else if(num == 4) fill(150, 0, 200); // purble
+      else if(num == 5) fill(255, 200, 25); // orage-TAN
+      else if(num == 6) fill(0, 220, 220); // light blue/teal
+      else if(num == 7) fill(100); //dark gray
+      else if(num == 8) fill(150); //light gray
       textSize(sizeOfTile/1.5);
       textAlign(CENTER);
       text(board[r][c].neighborBombs, c * sizeOfTile + sizeOfTile/2.0, r * sizeOfTile + sizeOfTile/1.5 + bannerHeight);
