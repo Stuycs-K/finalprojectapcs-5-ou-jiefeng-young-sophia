@@ -61,3 +61,4 @@ Day 7:
 
 Day 8+
 - Implementation of nice to have features
+- Added menu, easy/medium/hard levels, win screen
