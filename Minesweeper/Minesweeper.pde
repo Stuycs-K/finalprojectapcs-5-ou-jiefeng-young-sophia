@@ -6,6 +6,7 @@ private int page = 0;
 
 void setup(){
   size(800, 900);
+  page = 0;
   menuSetup();
   //game = new Grid(width/sizeOfTile, bombs);
   //game.initialDisplay();
@@ -17,15 +18,19 @@ void mousePressed(){
   if(page == 0){
     menuPressed();
   }
-  if(page == 1){
+  else if(page == 1){
     selectionPressed();
   }
-  if(page == 2){
+  else if(page == 2){
     gamePressed();
   }
 }
 
 void menuSetup(){
+  fill(100);
+  rect(0, 0, width, height);
+  
+  fill(255);
   textSize(100);
   textAlign(CENTER);
   text("Minesweeper", 400, 200);
@@ -60,18 +65,36 @@ void selectionMenu(){
   fill(0);
   textSize(25);
   textAlign(CENTER);
-  text("Easy", 25, 500); 
+  text("Easy", 80, 625);
+  text("Medium", 280, 625);
+  text("Hard", 480, 625);
+  text("Custom", 680, 625);
 }
 
 void selectionPressed(){
-  
+  if(25 < mouseX && mouseX < 150 && 500 < mouseY && mouseY < 750){
+    bombs = 20;
+    page++;
+  }
+  else if(225 < mouseX && mouseX < 325 && 500 < mouseY && mouseY < 750){
+    bombs = 30;
+    page++;
+  }
+  else if(425 < mouseX && mouseX < 550 && 500 < mouseY && mouseY < 750){
+    bombs = 40;
+    page++;
+  }
+  //custom
+  game = new Grid(width/sizeOfTile, bombs);
+  game.initialDisplay();
+  //custom
 }
 
 void gamePressed(){
   if(mouseY > bannerHeight){
     int c = mouseX / sizeOfTile;
     int r = (mouseY - bannerHeight)/ sizeOfTile;
-    fill(0);
+   // fill(0);
     if(mouseButton == LEFT){
       game.revealTile(r, c);
       if(game.isDead){

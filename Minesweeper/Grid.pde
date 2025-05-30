@@ -106,9 +106,7 @@ public class Grid{
     fill(0);
     textAlign(CENTER);
     textSize(30);
-    text("Total Bombs: " + totalBombs, width*0.2, bannerHeight/2);
-    text("Total Hidden: " + totalHidden, width*0.5, bannerHeight/2);
-    text("Total Flags: " + totalFlags, width*0.8, bannerHeight/2);
+    text("Flags: " + (totalBombs-totalFlags), width*0.5, bannerHeight/2);
   }
 
   void revealTile(int r, int c){
@@ -141,7 +139,7 @@ public class Grid{
       square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
       isDead = true;
     }
-
+    totalHidden--;
     firstClick = false;
   }
 
@@ -180,6 +178,7 @@ public class Grid{
     }
   }
 
+  
   void flagTile(int r, int c){
     board[r][c].isFlagged = !board[r][c].isFlagged && !board[r][c].isRevealed;
     if(board[r][c].isFlagged == true){
@@ -204,5 +203,6 @@ public class Grid{
         }
       }
     }
+    page = 4; //unless you want to keep pressing, in which case delete
   }
 }
