@@ -15,6 +15,7 @@ void draw(){
 }
 
 void mousePressed(){
+  println("mousePressed " + second() + "s page: " + page); //DEBUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
   if(page == 0){
     menuPressed();
   }
@@ -72,22 +73,26 @@ void selectionMenu(){
 }
 
 void selectionPressed(){
+  boolean buttonClicked = false;
   if(25 < mouseX && mouseX < 150 && 500 < mouseY && mouseY < 750){
     bombs = 20;
-    page++;
+    buttonClicked = true;
   }
-  else if(225 < mouseX && mouseX < 325 && 500 < mouseY && mouseY < 750){
+  else if(225 < mouseX && mouseX < 350 && 500 < mouseY && mouseY < 750){
     bombs = 30;
-    page++;
+    buttonClicked = true;
   }
   else if(425 < mouseX && mouseX < 550 && 500 < mouseY && mouseY < 750){
     bombs = 40;
+    buttonClicked = true;
+  }
+  //custom added later
+  
+  if(buttonClicked){
+    game = new Grid(width/sizeOfTile, bombs);
+    game.initialDisplay();
     page++;
   }
-  //custom
-  game = new Grid(width/sizeOfTile, bombs);
-  game.initialDisplay();
-  //custom
 }
 
 void gamePressed(){
@@ -112,5 +117,6 @@ void gamePressed(){
 void keyPressed(){
   if(key == ' '){
     setup();
+    println(); //DEBUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
   }
 }
