@@ -8,8 +8,6 @@ void setup(){
   size(800, 900);
   page = 0;
   menuSetup();
-  //game = new Grid(width/sizeOfTile, bombs);
-  //game.initialDisplay();
 }
 void draw(){
 }

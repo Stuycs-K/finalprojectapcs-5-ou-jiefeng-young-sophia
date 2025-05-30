@@ -106,7 +106,7 @@ public class Grid{
     fill(0);
     textAlign(CENTER);
     textSize(30);
-    text("Flags: " + (totalBombs-totalFlags) + " hidden: " + totalHidden, width*0.5, bannerHeight/2);
+    text("Flags: " + (totalBombs-totalFlags), width*0.5, bannerHeight/2);
   }
 
   void revealTile(int r, int c){
@@ -208,8 +208,8 @@ public class Grid{
     fill(200, 255, 200);
     rect(0, 0, width, bannerHeight);
     fill(255, 200, 200);
-    textSize(75);
+    textSize(80);
     textAlign(CENTER);
-    text("WIN >:D", width/2, bannerHeight/2);
+    text("WIN >:D", width/2, bannerHeight*.8);
   }
 }
