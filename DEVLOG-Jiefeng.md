@@ -24,3 +24,6 @@ This document must be updated daily every time you finish a work session.
 
 ### 2025-05-27 - revealNeighbors
 - Added revealNeighbors, a helper method that automatically reveals all tiles around (c, r) that is called whenever the tile at (c, r) has no bomb neighbors: 15 minutes
+
+### 2025-05-28 - deathScreen
+- Added deathScreen that reveals all bombs when dead, will later be used for making a more fancy death animation: 10 minutes
