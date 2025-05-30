@@ -205,4 +205,12 @@ public class Grid{
     }
     page = 4; //unless you want to keep pressing, in which case delete
   }
+  public void winScreen(){
+    fill(200, 255, 200);
+    rect(0, 0, width, bannerHeight);
+    fill(255, 200, 200);
+    textSize(80);
+    textAlign(CENTER);
+    text("WIN >:D", width/2, bannerHeight*.8);
+  }
 }
