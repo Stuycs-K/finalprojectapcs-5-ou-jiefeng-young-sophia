@@ -85,9 +85,17 @@ void selectionPressed(){
     page++;
   }
   //custom
+  else if(625 < mouseX && mouseX < 750 && 500 < mouseY && mouseY < 750){
+    customMenu();
+  }
   game = new Grid(width/sizeOfTile, bombs);
   game.initialDisplay();
   //custom
+}
+
+void customMenu(){
+  //new menu, page 1.5
+  //type numbers for bombs and/or sizeOfTile or choose from a list
 }
 
 void gamePressed(){
@@ -106,12 +114,16 @@ void gamePressed(){
     }
   }
   game.editBanner();
+  if(game.totalHidden == game.totalBombs){
+    game.winScreen();
+  }
+  
 }
+
   
 
 void keyPressed(){
   if(key == ' '){
-    clear();
     setup();
   }
 }
