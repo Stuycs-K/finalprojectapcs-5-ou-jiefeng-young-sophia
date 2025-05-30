@@ -33,3 +33,7 @@ This document must be updated daily every time you finish a work session.
 - Added a main menu, where the game initially begins (internally page 0): 10 minutes
 - Added a selection menu, where the game will allow you to select between easy, medium, hard, and custom modes (internally page 1): 25 minutes
 - mousePressed now has different behaviors depending on which page is currently on screen
+
+### 2025-05-30
+- Edited editFirstBomb to edit the tiles around the first tile, effectively making a 3x3 area of safe tiles
+- Fixed a bug in selectionPressed where the game is initialized even if the button is not clicked
