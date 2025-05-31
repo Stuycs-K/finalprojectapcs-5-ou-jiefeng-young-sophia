@@ -31,6 +31,7 @@ Expanded description including how much time was spent on task.
 - todo: merge with main and delete the funky neighbor method on there, make a custom option, first click makes a block so you dont have to gambe when you click on a numbered tile
 - 445 am, working on win screen, hidden on banner is for debugging, delete later
 - class, finished win banner, deleted hidden counter on banner. editing colors
+- 23:54, edited a color
 ### 2025-05-29 - Brief description
 ### 2025-05-29 - Brief description
 ### 2025-05-29 - Brief description

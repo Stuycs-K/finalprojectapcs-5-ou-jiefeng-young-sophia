@@ -128,11 +128,11 @@ public class Grid{
 
       int num = board[r][c].neighborBombs;
       if(num == 1) fill(50, 100, 250);
-      else if(num == 1) fill(50, 100, 250); // blue
-      else if(num == 2) fill(0, 200, 50); // green
+      else if(num == 1) fill(0, 50, 100); // blue
+      else if(num == 2) fill(0, 150, 50); // green
       else if(num == 3) fill(200, 0, 0); // red
       else if(num == 4) fill(150, 0, 200); // purble
-      else if(num == 5) fill(255, 200, 25); // orage-TAN
+      else if(num == 5) fill(255, 200, 25); // orage-yellow
       else if(num == 6) fill(0, 220, 220); // light blue/teal
       else if(num == 7) fill(100); //dark gray
       else if(num == 8) fill(150); //light gray
