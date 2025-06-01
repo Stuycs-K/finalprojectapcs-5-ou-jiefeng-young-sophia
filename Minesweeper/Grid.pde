@@ -5,10 +5,10 @@ public class Grid{
   private int totalHidden;
   private boolean firstClick;
   private boolean isDead;
-  private color GREEN = color(150, 250, 200);
+  private color GREEN = color(100, 250, 150);
   private color RED = color(250, 150, 150);
   private color TAN = color(255, 220, 150);
-  private color BLACK = color(0, 0, 0);
+  //private color BLACK = color(0, 0, 0);
 
   public Grid(int size, int numBombs){
     board = new Tile[size][size];
@@ -128,7 +128,7 @@ public class Grid{
 
       int num = board[r][c].neighborBombs;
       if(num == 1) fill(50, 100, 250);
-      else if(num == 1) fill(0, 50, 100); // blue
+      else if(num == 1) fill(0, 30, 150); // blue
       else if(num == 2) fill(0, 150, 50); // green
       else if(num == 3) fill(200, 0, 0); // red
       else if(num == 4) fill(150, 0, 200); // purble
