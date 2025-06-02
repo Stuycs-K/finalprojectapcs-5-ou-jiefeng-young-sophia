@@ -112,15 +112,8 @@ public class Grid{
   void revealTile(int r, int c){
     board[r][c].isRevealed = !(board[r][c].isFlagged);
     if(board[r][c].isRevealed && firstClick){ //if it's the first click
-      editFirstBomb(r-1,c-1);
-      editFirstBomb(r-1,c);
-      editFirstBomb(r-1,c+1);
-      editFirstBomb(r,c-1);
       editFirstBomb(r,c);
-      editFirstBomb(r,c+1);
-      editFirstBomb(r+1,c-1);
-      editFirstBomb(r+1,c);
-      editFirstBomb(r+1,c+1);
+      editNeighborBombs(r,c);
       firstClick = false;
     }
 
@@ -192,6 +185,41 @@ public class Grid{
     //bottom right
     if(r + 1 < board.length && c + 1 < board[r].length && !board[r+1][c+1].isRevealed){
       revealTile(r + 1, c + 1);
+    }
+  }
+  
+  private void editNeighborBombs(int r, int c){
+    //top left
+    if(r - 1 >= 0 && c - 1 >= 0){
+      editFirstBomb(r-1,c-1);
+    }
+    //top middle
+    if(r - 1 >= 0){
+      editFirstBomb(r-1,c);
+    }
+    //top right
+    if(r - 1 >= 0 && c + 1 < board[r].length){
+      editFirstBomb(r-1,c+1);
+    }
+    //middle left
+    if(c - 1 >= 0){
+      editFirstBomb(r,c-1);
+    }
+    //middle right
+    if(c + 1 < board[r].length){
+      editFirstBomb(r,c+1);
+    }
+    //bottom left
+    if(r + 1 < board.length){
+      editFirstBomb(r+1,c-1);
+    }
+    //bottom middle
+    if(r + 1 < board.length){
+      editFirstBomb(r+1,c);
+    }
+    //bottom right
+    if(r + 1 < board.length){
+      editFirstBomb(r+1,c+1);
     }
   }
 
