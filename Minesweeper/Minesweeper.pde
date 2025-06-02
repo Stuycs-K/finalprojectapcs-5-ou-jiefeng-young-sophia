@@ -27,15 +27,15 @@ void mousePressed(){
 void menuSetup(){
   fill(100);
   rect(0, 0, width, height);
-  
+
   fill(255);
   textSize(100);
   textAlign(CENTER);
   text("Minesweeper", 400, 200);
-  
+
   textSize(50);
   textAlign(CENTER);
-  text("PLAY", 400, 500); 
+  text("PLAY", 400, 500);
 }
 
 void menuPressed(){
@@ -48,18 +48,18 @@ void menuPressed(){
 void selectionMenu(){
   fill(255);
   rect(0, 0, width, height);
-  
+
   fill(0);
   textSize(100);
   textAlign(CENTER);
-  text("Selection", 400, 200); 
-  
+  text("Selection", 400, 200);
+
   fill(250, 250, 150);
   rect(25, 500, 125, 250); //easy
   rect(225, 500, 125, 250); //medium
   rect(425, 500, 125, 250); //hard
   rect(625, 500, 125, 250); //custom
-  
+
   fill(0);
   textSize(25);
   textAlign(CENTER);
@@ -83,23 +83,19 @@ void selectionPressed(){
     bombs = 40;
     buttonClicked = true;
   }
-  //custom added later
-  
+  else if(625 < mouseX && mouseX < 750 && 500 < mouseY && mouseY < 750){
+    customMenu();
+  }
+
   if(buttonClicked){
     game = new Grid(width/sizeOfTile, bombs);
     game.initialDisplay();
     page++;
   }
-<<<<<<< HEAD
-=======
-  //custom
-  else if(625 < mouseX && mouseX < 750 && 500 < mouseY && mouseY < 750){
-    customMenu();
-  }
+  
   game = new Grid(width/sizeOfTile, bombs);
   game.initialDisplay();
   //custom
->>>>>>> main
 }
 
 void customMenu(){
@@ -126,10 +122,10 @@ void gamePressed(){
   if(game.totalHidden == game.totalBombs){
     game.winScreen();
   }
-  
+
 }
 
-  
+
 
 void keyPressed(){
   if(key == ' '){
