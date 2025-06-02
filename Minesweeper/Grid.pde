@@ -79,12 +79,12 @@ public class Grid{
   }
 
   private void editFirstBomb(int r, int c){
-    //precondition: tile is a bomb
+    //if there's a bomb, it'll be moved
+    //if there's no bomb, nothing will happen
     while(board[r][c].isBomb){
       setNeighbors(r, c, -1);
       setBombs(1);
       board[r][c].isBomb = false;
-      firstClick = false;
     }
   }
 
@@ -111,8 +111,17 @@ public class Grid{
 
   void revealTile(int r, int c){
     board[r][c].isRevealed = !(board[r][c].isFlagged);
-    if(board[r][c].isBomb && board[r][c].isRevealed && firstClick){
+    if(board[r][c].isRevealed && firstClick){ //if it's the first click
+      editFirstBomb(r-1,c-1);
+      editFirstBomb(r-1,c);
+      editFirstBomb(r-1,c+1);
+      editFirstBomb(r,c-1);
       editFirstBomb(r,c);
+      editFirstBomb(r,c+1);
+      editFirstBomb(r+1,c-1);
+      editFirstBomb(r+1,c);
+      editFirstBomb(r+1,c+1);
+      firstClick = false;
     }
 
     if(!board[r][c].isBomb && board[r][c].isRevealed && board[r][c].neighborBombs == 0){ //if its a tile with 0 bomb neighbors
@@ -149,7 +158,6 @@ public class Grid{
       isDead = true;
     }
     totalHidden--;
-    firstClick = false;
   }
 
   private void revealNeighbors(int r, int c){ //only nonrevealed neighbors are affected
