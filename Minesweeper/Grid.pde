@@ -206,7 +206,12 @@ public class Grid{
   public void deathScreen(){
     for(int r = 0; r < board.length; r++){
       for(int c = 0; c < board[r].length; c++){
-        if(board[r][c].isBomb){
+        if(board[r][c].isBomb && board[r][c].isFlagged){
+          fill(BLACK);
+          stroke(0);
+          circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
+        }
+        else if(board[r][c].isBomb){
           revealTile(r, c);
         }
       }
