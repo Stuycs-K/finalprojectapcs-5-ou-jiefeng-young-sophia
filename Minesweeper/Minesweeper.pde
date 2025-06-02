@@ -99,6 +99,11 @@ void selectionPressed(){
 }
 
 void customMenu(){
+  fill(255);
+  rect(0, 0, width, height);
+  fill(250, 250, 150);
+  rect(25, 500, 125, 250); //sizeOfTile
+  rect(225, 500, 125, 250); //medium
   //new menu, page 1.5
   //type numbers for bombs and/or sizeOfTile or choose from a list
   
