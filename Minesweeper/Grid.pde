@@ -5,7 +5,7 @@ public class Grid{
   private int totalHidden;
   private boolean firstClick;
   private boolean isDead;
-  private color GREEN = color(100, 250, 150);
+  private color GREEN = color(150, 250, 200);
   private color RED = color(250, 150, 150);
   private color TAN = color(255, 220, 150);
   //private color BLACK = color(0, 0, 0);
