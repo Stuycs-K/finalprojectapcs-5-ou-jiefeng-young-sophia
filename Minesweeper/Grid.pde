@@ -8,7 +8,7 @@ public class Grid{
   private color GREEN = color(150, 250, 200);
   private color RED = color(250, 150, 150);
   private color TAN = color(255, 220, 150);
-  //private color BLACK = color(0, 0, 0);
+  private color BLACK = color(0, 0, 0);
 
   public Grid(int size, int numBombs){
     board = new Tile[size][size];
