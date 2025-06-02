@@ -15,7 +15,6 @@ void draw(){
 }
 
 void mousePressed(){
-  println("mousePressed " + second() + "s page: " + page); //DEBUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
   if(page == 0){
     menuPressed();
   }
@@ -117,6 +116,5 @@ void gamePressed(){
 void keyPressed(){
   if(key == ' '){
     setup();
-    println(); //DEBUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
   }
 }

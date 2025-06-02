@@ -81,7 +81,6 @@ public class Grid{
   private void editFirstBomb(int r, int c){
     //if there's a bomb, it'll be moved
     //if there's no bomb, nothing will happen
-    print("(" + c + ", " + r + "), "); //DEBUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG ERASE AFTER
     while(board[r][c].isBomb){
       setNeighbors(r, c, -1);
       setBombs(1);
@@ -113,7 +112,6 @@ public class Grid{
   void revealTile(int r, int c){
     board[r][c].isRevealed = !(board[r][c].isFlagged);
     if(board[r][c].isRevealed && firstClick){ //if it's the first click
-    print("revealTile " + second() + "s "); //DEBUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
       editFirstBomb(r-1,c-1);
       editFirstBomb(r-1,c);
       editFirstBomb(r-1,c+1);
