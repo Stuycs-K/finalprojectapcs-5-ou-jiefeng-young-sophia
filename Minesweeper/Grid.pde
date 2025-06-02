@@ -210,7 +210,7 @@ public class Grid{
       editFirstBomb(r,c+1);
     }
     //bottom left
-    if(r + 1 < board.length){
+    if(r + 1 < board.length && c - 1 >= 0){
       editFirstBomb(r+1,c-1);
     }
     //bottom middle
@@ -218,7 +218,7 @@ public class Grid{
       editFirstBomb(r+1,c);
     }
     //bottom right
-    if(r + 1 < board.length){
+    if(r + 1 < board.length && c + 1 < board[r].length){
       editFirstBomb(r+1,c+1);
     }
   }
