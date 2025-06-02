@@ -101,6 +101,8 @@ void selectionPressed(){
 void customMenu(){
   //new menu, page 1.5
   //type numbers for bombs and/or sizeOfTile or choose from a list
+  
+  page++;
 }
 
 void gamePressed(){
