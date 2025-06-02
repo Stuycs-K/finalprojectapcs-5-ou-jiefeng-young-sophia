@@ -34,6 +34,11 @@ This document must be updated daily every time you finish a work session.
 - Added a selection menu, where the game will allow you to select between easy, medium, hard, and custom modes (internally page 1): 25 minutes
 - mousePressed now has different behaviors depending on which page is currently on screen
 
-### 2025-05-30
+### 2025-05-30 - editFirstBomb
 - Edited editFirstBomb to edit the tiles around the first tile, effectively making a 3x3 area of safe tiles
 - Fixed a bug in selectionPressed where the game is initialized even if the button is not clicked
+
+### 2025-06-02 - Small changes & bug fixes
+- deathScreen displays incorrect flags by marking them as black
+- Fixed a bug in revealTile where when revealing the 3x3 tiles on first click, it didn't check if the 3x3 was within bounds of the grid
+- Added editNeighborBombs, a helper method to revealTile that checks if the tiles in the 3x3 are within bounds
