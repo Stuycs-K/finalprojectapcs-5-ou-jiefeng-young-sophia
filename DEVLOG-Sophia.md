@@ -32,7 +32,8 @@ Expanded description including how much time was spent on task.
 - 445 am, working on win screen, hidden on banner is for debugging, delete later
 - class, finished win banner, deleted hidden counter on banner. editing colors
 - 23:54, edited a color
-### 2025-05-29 - Brief description
+### 2025-06-01 - Brief description
+- class, working on custom
 ### 2025-05-29 - Brief description
 ### 2025-05-29 - Brief description
 ### 2025-05-29 - Brief description

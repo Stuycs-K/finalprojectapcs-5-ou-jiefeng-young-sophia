@@ -93,8 +93,6 @@ void selectionPressed(){
     page++;
   }
   
-  game = new Grid(width/sizeOfTile, bombs);
-  game.initialDisplay();
   //custom
 }
 
@@ -102,12 +100,12 @@ void customMenu(){
   fill(255);
   rect(0, 0, width, height);
   fill(250, 250, 150);
-  rect(25, 500, 125, 250); //sizeOfTile
-  rect(225, 500, 125, 250); //medium
+  rect(300, 200, 50, 600); //sizeOfTile
+  rect(500, 200, 50, 600); //bombs
   //new menu, page 1.5
   //type numbers for bombs and/or sizeOfTile or choose from a list
   
-  page++;
+  //page++;
 }
 
 void gamePressed(){
