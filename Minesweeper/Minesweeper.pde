@@ -72,15 +72,18 @@ void selectionMenu(){
 void selectionPressed(){
   boolean buttonClicked = false;
   if(25 < mouseX && mouseX < 150 && 500 < mouseY && mouseY < 750){
-    bombs = 20;
+    bombs = 10;
+    sizeOfTile = 80;
     buttonClicked = true;
   }
   else if(225 < mouseX && mouseX < 350 && 500 < mouseY && mouseY < 750){
-    bombs = 30;
+    bombs = 40;
+    sizeOfTile = 50;
     buttonClicked = true;
   }
   else if(425 < mouseX && mouseX < 550 && 500 < mouseY && mouseY < 750){
-    bombs = 40;
+    bombs = 100;
+    sizeOfTile = 32;
     buttonClicked = true;
   }
   else if(625 < mouseX && mouseX < 750 && 500 < mouseY && mouseY < 750){
