@@ -72,8 +72,8 @@ void selectionMenu(){
 void selectionPressed(){
   boolean buttonClicked = false;
   if(25 < mouseX && mouseX < 150 && 500 < mouseY && mouseY < 750){
-    bombs = 10;
-    sizeOfTile = 80;
+    bombs = 1;
+    sizeOfTile = 200;
     buttonClicked = true;
   }
   else if(225 < mouseX && mouseX < 350 && 500 < mouseY && mouseY < 750){
@@ -95,10 +95,6 @@ void selectionPressed(){
     game.initialDisplay();
     page++;
   }
-  
-  game = new Grid(width/sizeOfTile, bombs);
-  game.initialDisplay();
-  //custom
 }
 
 void customMenu(){
