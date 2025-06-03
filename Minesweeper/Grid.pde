@@ -234,5 +234,6 @@ public class Grid{
     textSize(80);
     textAlign(CENTER);
     text("WIN >:D", width/2, bannerHeight*.8);
+    page = 4;
   }
 }

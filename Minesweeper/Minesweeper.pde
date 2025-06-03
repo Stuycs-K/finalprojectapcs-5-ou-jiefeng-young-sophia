@@ -3,6 +3,7 @@ private int bombs = 25;
 private Grid game;
 private int bannerHeight = 100;
 private int page = 0;
+private int customPage = 100;
 
 void setup(){
   size(800, 900);
@@ -22,6 +23,10 @@ void mousePressed(){
   else if(page == 2){
     gamePressed();
   }
+  else if(page == customPage){
+    customPressed();
+  }
+
 }
 
 void menuSetup(){
@@ -85,6 +90,7 @@ void selectionPressed(){
   }
   else if(625 < mouseX && mouseX < 750 && 500 < mouseY && mouseY < 750){
     customMenu();
+    page = customPage;
   }
 
   if(buttonClicked){
@@ -92,21 +98,30 @@ void selectionPressed(){
     game.initialDisplay();
     page++;
   }
-  
-  //custom
 }
 
 void customMenu(){
   fill(255);
   rect(0, 0, width, height);
   fill(250, 250, 150);
-  rect(300, 200, 50, 600); //sizeOfTile
+  rect(250, 200, 50, 600); //sizeOfTile 
   rect(500, 200, 50, 600); //bombs
+  //textAlign
+  
   //new menu, page 1.5
   //type numbers for bombs and/or sizeOfTile or choose from a list
   
   //page++;
 }
+void customPressed(){
+  if(250 < mouseY && mouseY < 750){
+    if(250 < mouseX && mouseX < 300){//size
+    }
+    else if(500 < mouseX && mouseX < 550){//bombs
+    }
+  }
+}
+
 
 void gamePressed(){
   if(mouseY > bannerHeight){
