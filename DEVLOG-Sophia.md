@@ -37,5 +37,6 @@ Expanded description including how much time was spent on task.
 ### 2025-06-03 - Brief description
 - work on custom, we going to have a fake slider looking thing, minor winscreen bug
 ### 2025-06-04 - Brief description
-- i have a bar you can click on and will set the scale later to change bomb and sizeOfTile
+- 5am i have a bar you can click on and will set the scale later to change bomb and sizeOfTile
+- class added a scale and labels 
 ### 2025-05-29 - Brief description

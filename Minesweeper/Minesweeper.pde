@@ -106,26 +106,58 @@ void customMenu(){
   fill(250, 250, 150);
   rect(250, 200, 50, 600); //sizeOfTile 
   rect(500, 200, 50, 600); //bombs
-  //textAlign
   
-  //new menu, page 1.5
-  //type numbers for bombs and/or sizeOfTile or choose from a list
-  
-  //page++;
+  textAlign(RIGHT);
+  fill(0);
+  text("20 ", 250, 230);
+  text("25 ", 250, 230 + 60);
+  text("32 ", 250, 230 + 120);
+  text("40 ", 250, 230 + 180);
+  text("50 ", 250, 230 + 240);
+  text("80 ", 250, 230 + 300);
+  text("100 ", 250, 230 + 360);
+  text("160 ", 250, 230 + 420);
+  text("200 ", 250, 230 + 480);
+  text("400 ", 250, 230 + 540);
+  textAlign(LEFT);
+  text(" 10%", 550, 200 + 60);
+  text(" 20%", 550, 200 + 120);
+  text(" 30%", 550, 200 + 180);
+  text(" 40%", 550, 200 + 240);
+  text(" 50%", 550, 200 + 300);
+  text(" 60%", 550, 200 + 360);
+  text(" 70%", 550, 200 + 420);
+  text(" 80%", 550, 200 + 480);
+  text(" 90%", 550, 200 + 540);
+  text(" 100%", 550, 200 + 600);
+  textSize(30);
+  textAlign(CENTER, BOTTOM);
+  text("Tile Size", 275, 190); 
+  text("Bomb Density", 525, 190); 
+
 }
 void customPressed(){
-  if(250 < mouseY && mouseY < 750){
+  if(200 < mouseY && mouseY < 800){
     if(250 < mouseX && mouseX < 300){//size
+      fill(255);
+      noStroke();
+      rect(250, 175, 55, 650);
+      stroke(0);
       fill(250, 250, 150);
       rect(250, 200, 50, 600); 
       fill(250, 50, 50);
       rect(250, mouseY - 15, 50, 30);
     }
-    else if(500 < mouseX && mouseX < 550){//bombs
+    else if(500 < mouseX && mouseX < 550){//bombs by percentage
+      fill(255);
+      noStroke();
+      rect(500, 175, 55, 650);
+      stroke(0);
       fill(250, 250, 150);
       rect(500, 200, 50, 600); 
       fill(250, 50, 50);
       rect(500, mouseY - 15, 50, 30);
+      //1-
     }
   }
 }
