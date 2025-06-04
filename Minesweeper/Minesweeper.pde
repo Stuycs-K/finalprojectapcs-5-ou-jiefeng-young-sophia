@@ -116,8 +116,16 @@ void customMenu(){
 void customPressed(){
   if(250 < mouseY && mouseY < 750){
     if(250 < mouseX && mouseX < 300){//size
+      fill(250, 250, 150);
+      rect(250, 200, 50, 600); 
+      fill(250, 50, 50);
+      rect(250, mouseY - 15, 50, 30);
     }
     else if(500 < mouseX && mouseX < 550){//bombs
+      fill(250, 250, 150);
+      rect(500, 200, 50, 600); 
+      fill(250, 50, 50);
+      rect(500, mouseY - 15, 50, 30);
     }
   }
 }
@@ -150,5 +158,10 @@ void gamePressed(){
 void keyPressed(){
   if(key == ' '){
     setup();
+  }
+  if(key == ENTER && page == customPage){
+    game = new Grid(width/sizeOfTile, bombs);
+    game.initialDisplay();
+    page = 2;
   }
 }
