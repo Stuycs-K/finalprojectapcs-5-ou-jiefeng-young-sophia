@@ -101,6 +101,7 @@ public class Grid{
   }
 
   void editBanner(){
+    stroke(0);
     fill(250, 190, 120);
     rect(0, 0, width, bannerHeight);
     fill(0);
@@ -271,10 +272,7 @@ public class Grid{
         }
       }
     }
-    page = 4; //unless you want to keep pressing, in which case delete
-  }
-  
-  private void incorrectFlags(){
+    page = -1; //unless you want to keep pressing, in which case delete
   }
   
   public void winScreen(){
@@ -284,5 +282,6 @@ public class Grid{
     textSize(80);
     textAlign(CENTER);
     text("WIN >:D", width/2, bannerHeight*.8);
+    page = -1;
   }
 }
