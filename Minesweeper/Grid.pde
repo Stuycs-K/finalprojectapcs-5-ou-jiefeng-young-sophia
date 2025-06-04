@@ -252,20 +252,8 @@ public class Grid{
   public void deathScreen(){
     for(int r = 0; r < board.length; r++){
       for(int c = 0; c < board[r].length; c++){
-        if(!board[r][c].isBomb && board[r][c].isFlagged){ //incorrect flags
-          fill(GREEN);
-          stroke(0);
-          square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile); //refills the square
-          
-          stroke(RED);
-          int midC = c * sizeOfTile + (sizeOfTile/2);
-          int midR = r * sizeOfTile + (sizeOfTile/2) + bannerHeight;
-          int i = sizeOfTile/2;
-          line(midC - i, midR - i, //top left
-               midC + i, midR + i); // to bottom right
-          line(midC + i, midR - i, //top right
-               midC - i, midR + i); //to bottom left
-          
+        if(!board[r][c].isBomb && board[r][c].isFlagged){
+          incorrectFlags(r, c);
         }
         else if(board[r][c].isBomb){
           revealTile(r, c);
@@ -274,6 +262,22 @@ public class Grid{
     }
     page = -1; //unless you want to keep pressing, in which case delete
   }
+  
+  private void incorrectFlags(int r, int c){
+    fill(GREEN);
+    stroke(0);
+    square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile); //refills the square
+    
+    stroke(RED);
+    int midC = c * sizeOfTile + (sizeOfTile/2);
+    int midR = r * sizeOfTile + (sizeOfTile/2) + bannerHeight;
+    int i = sizeOfTile/2;
+    line(midC - i, midR - i, //top left
+         midC + i, midR + i); // to bottom right
+    line(midC + i, midR - i, //top right
+         midC - i, midR + i); //to bottom left
+  }
+    
   
   public void winScreen(){
     fill(200, 255, 200);
