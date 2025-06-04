@@ -46,3 +46,7 @@ This document must be updated daily every time you finish a work session.
 ### 2025-06-03 - Playtesting
 - Changed difficulty of easy, medium, and hard modes: 2 minutes
 - Fixed the same bug in selectionPressed that occured on 5/30: 5 minutes
+
+### 2025-06-04 - Shapes for flags
+- Incorrect flags are now displayed with a red X: 10 minutes
+- Flags are now displayed with a red flag (and not an ugly red circle): 15 minutes

@@ -12,6 +12,7 @@ void setup(){
 void draw(){
   if(game != null && game.isDead){
     print("DEAD");
+    //idea: deathScreen adds to List<Tile> unrevealedBombs which is then revealed one at a time with draw
   }
 }
 

@@ -4,7 +4,8 @@ public class Grid{
   private int totalFlags;
   private int totalHidden;
   private boolean firstClick;
-  private boolean isDead;
+  public boolean isDead;
+  public Tile[] unrevealedBombs;
   private color GREEN = color(150, 250, 200);
   private color RED = color(250, 150, 150);
   private color TAN = color(255, 220, 150);
