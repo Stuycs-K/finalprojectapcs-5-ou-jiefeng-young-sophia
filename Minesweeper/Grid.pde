@@ -228,8 +228,16 @@ public class Grid{
     board[r][c].isFlagged = !board[r][c].isFlagged && !board[r][c].isRevealed;
     if(board[r][c].isFlagged == true){
       fill(RED);
-      stroke(0);
-      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
+      stroke(RED);
+      int midC = c * sizeOfTile + (sizeOfTile/2);
+      int midR = r * sizeOfTile + (sizeOfTile/2) + bannerHeight;
+      int i = sizeOfTile/2;
+      triangle(midC - i/2, midR - 2 * i/3,
+               midC - i/2, midR,
+               midC + i/2, midR);
+               
+      line(midC - i/2, midR + 2 * i/3,
+           midC - i/2, midR - i/2);
       totalFlags++;
     }
     else if(!board[r][c].isRevealed){
@@ -249,10 +257,13 @@ public class Grid{
           square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile); //refills the square
           
           stroke(RED);
-          line(c * sizeOfTile + (sizeOfTile/2) - sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight - sizeOfTile/2, //bottom left
-               c * sizeOfTile + (sizeOfTile/2) + sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight + sizeOfTile/2); // to top right
-          line(c * sizeOfTile + (sizeOfTile/2) + sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight - sizeOfTile/2, //bottom right
-               c * sizeOfTile + (sizeOfTile/2) - sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight + sizeOfTile/2); //to top left
+          int midC = c * sizeOfTile + (sizeOfTile/2);
+          int midR = r * sizeOfTile + (sizeOfTile/2) + bannerHeight;
+          int i = sizeOfTile/2;
+          line(midC - i, midR - i, //top left
+               midC + i, midR + i); // to bottom right
+          line(midC + i, midR - i, //top right
+               midC - i, midR + i); //to bottom left
           
         }
         else if(board[r][c].isBomb){
@@ -262,6 +273,10 @@ public class Grid{
     }
     page = 4; //unless you want to keep pressing, in which case delete
   }
+  
+  private void incorrectFlags(){
+  }
+  
   public void winScreen(){
     fill(200, 255, 200);
     rect(0, 0, width, bannerHeight);
