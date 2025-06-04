@@ -10,6 +10,9 @@ void setup(){
   menuSetup();
 }
 void draw(){
+  if(game != null && game.isDead){
+    print("DEAD");
+  }
 }
 
 void mousePressed(){
