@@ -43,6 +43,6 @@ This document must be updated daily every time you finish a work session.
 - Fixed a bug in revealTile where when revealing the 3x3 tiles on first click, it didn't check if the 3x3 was within bounds of the grid: 20 minutes
 - Added editNeighborBombs, a helper method to revealTile that checks if the tiles in the 3x3 are within bounds
 
-### 2025-06-03 -
+### 2025-06-03 - Playtesting
 - Changed difficulty of easy, medium, and hard modes: 2 minutes
 - Fixed the same bug in selectionPressed that occured on 5/30: 5 minutes

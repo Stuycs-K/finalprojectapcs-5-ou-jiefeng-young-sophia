@@ -244,11 +244,16 @@ public class Grid{
     for(int r = 0; r < board.length; r++){
       for(int c = 0; c < board[r].length; c++){
         if(!board[r][c].isBomb && board[r][c].isFlagged){ //incorrect flags
-          fill(BLACK);
+          fill(GREEN);
           stroke(0);
-          circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
-          line(c * sizeOfTile + (sizeOfTile/2) - sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight - sizeOfTile/2,
-               c * sizeOfTile + (sizeOfTile/2) + sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight + sizeOfTile/2);
+          square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile); //refills the square
+          
+          stroke(RED);
+          line(c * sizeOfTile + (sizeOfTile/2) - sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight - sizeOfTile/2, //bottom left
+               c * sizeOfTile + (sizeOfTile/2) + sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight + sizeOfTile/2); // to top right
+          line(c * sizeOfTile + (sizeOfTile/2) + sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight - sizeOfTile/2, //bottom right
+               c * sizeOfTile + (sizeOfTile/2) - sizeOfTile/2, r * sizeOfTile + (sizeOfTile/2) + bannerHeight + sizeOfTile/2); //to top left
+          
         }
         else if(board[r][c].isBomb){
           revealTile(r, c);
