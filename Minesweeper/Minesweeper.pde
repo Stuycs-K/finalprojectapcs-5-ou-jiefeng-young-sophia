@@ -141,17 +141,19 @@ void customPressed(){
     if(250 < mouseX && mouseX < 300){//size
       fill(255);
       noStroke();
-      rect(250, 175, 55, 650);
+      rect(250, 190, 55, 650);
       stroke(0);
       fill(250, 250, 150);
       rect(250, 200, 50, 600); 
       fill(250, 50, 50);
       rect(250, mouseY - 15, 50, 30);
+      int ycor = mouseY - 230;
+      if()
     }
     else if(500 < mouseX && mouseX < 550){//bombs by percentage
       fill(255);
       noStroke();
-      rect(500, 175, 55, 650);
+      rect(500, 190, 55, 650);
       stroke(0);
       fill(250, 250, 150);
       rect(500, 200, 50, 600); 
