@@ -147,7 +147,7 @@ void customPressed(){
     if(250 < mouseX && mouseX < 300){//size
       fill(255);
       noStroke();
-      rect(250, 190, 55, 650);
+      rect(250, 185, 55, 650);
       stroke(0);
       fill(250, 250, 150);
       rect(250, 200, 50, 600); 
@@ -169,16 +169,16 @@ void customPressed(){
     else if(500 < mouseX && mouseX < 550){//bombs by percentage
       fill(255);
       noStroke();
-      rect(500, 190, 55, 650);
+      rect(500, 185, 55, 650);
       stroke(0);
       fill(250, 250, 150);
       rect(500, 200, 50, 600); 
       fill(250, 50, 50);
       rect(500, mouseY - 15, 50, 30);
       customPercentage = (mouseY - 200)/6;
-      bombs =(int)((800.0/sizeOfTile)*(800.0/sizeOfTile)*(customPercentage/100.0));
       
     }
+     bombs =(int)((800.0/sizeOfTile)*(800.0/sizeOfTile)*(customPercentage/100.0));
   }
 }
 

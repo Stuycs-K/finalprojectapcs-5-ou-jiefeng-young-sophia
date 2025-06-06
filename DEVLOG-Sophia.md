@@ -37,10 +37,12 @@ Expanded description including how much time was spent on task.
 - work on custom, we going to have a fake slider looking thing, minor winscreen bug
 ### 2025-06-04 - More Custom
 - 5am i have a bar you can click on and will set the scale later to change bomb and sizeOfTile
-- class added a scale and labels 
+- class added a scale and labels
 ### 2025-06-05 - More Custom
 - it kind of works. the first click on the new bord trggers the winscreen, which is bad
 - okay, the winscreen triggered because the custom set bombs to zero, causing an automatic win.
 - bombs were zero because i used percentage, which is a double/float, messing up bomb calulations
 - added decimal point and type casted the result
 - seems to work now, nice
+### 2025-06-05 - More Custom debugging
+- making bomb should come after every click because you can adjust size after percentage
