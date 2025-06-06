@@ -15,7 +15,7 @@ public class Grid{
     board = new Tile[size][size];
     for(int r = 0; r < board.length; r++){
         for(int c = 0; c < board[r].length; c++){
-          board[r][c] = new Tile();
+          board[r][c] = new Tile(r, c);
         }
     }
 
