@@ -174,9 +174,7 @@ void customPressed(){
       rect(500, mouseY - 15, 50, 30);
       customPercentage = (mouseY - 200)/6;
       bombs =(int)((800.0/sizeOfTile)*(800.0/sizeOfTile)*(customPercentage/100.0));
-      textSize(30);
-      textAlign(LEFT);
-      text("Tile Size: " + sizeOfTile + " bombs: " + bombs + " num: " + (800/sizeOfTile)*(800/sizeOfTile), 10, mouseY); 
+      
     }
   }
 }
