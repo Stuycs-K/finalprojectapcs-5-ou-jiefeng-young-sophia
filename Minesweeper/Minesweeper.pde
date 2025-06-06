@@ -4,11 +4,14 @@ private Grid game;
 private int bannerHeight = 100;
 private int page = 0;
 private int customPage = 100;
+private int customPercentage = 20;
 
 void setup(){
   size(800, 900);
   page = 0;
   menuSetup();
+  sizeOfTile = 50;
+  bombs = 25;
 }
 void draw(){
 }
@@ -147,8 +150,18 @@ void customPressed(){
       rect(250, 200, 50, 600); 
       fill(250, 50, 50);
       rect(250, mouseY - 15, 50, 30);
-      int ycor = mouseY - 230;
-      if()
+      int ycor = mouseY - 200;
+      if(ycor <= 60) sizeOfTile = 20;
+      else if(ycor <= 120) sizeOfTile = 25;
+      else if(ycor <= 180) sizeOfTile = 32;
+      else if(ycor <= 240) sizeOfTile = 40;
+      else if(ycor <= 300) sizeOfTile = 50;
+      else if(ycor <= 360) sizeOfTile = 80;
+      else if(ycor <= 420) sizeOfTile = 100;
+      else if(ycor <= 480) sizeOfTile = 160;
+      else if(ycor <= 540) sizeOfTile = 200;
+      else if(ycor <= 600) sizeOfTile = 400;
+      
     }
     else if(500 < mouseX && mouseX < 550){//bombs by percentage
       fill(255);
@@ -159,7 +172,11 @@ void customPressed(){
       rect(500, 200, 50, 600); 
       fill(250, 50, 50);
       rect(500, mouseY - 15, 50, 30);
-      //1-
+      customPercentage = (mouseY - 200)/6;
+      bombs =(int)((800.0/sizeOfTile)*(800.0/sizeOfTile)*(customPercentage/100.0));
+      textSize(30);
+      textAlign(LEFT);
+      text("Tile Size: " + sizeOfTile + " bombs: " + bombs + " num: " + (800/sizeOfTile)*(800/sizeOfTile), 10, mouseY); 
     }
   }
 }
