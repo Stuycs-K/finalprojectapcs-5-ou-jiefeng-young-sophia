@@ -5,7 +5,7 @@ public class Grid{
   private int totalHidden;
   private boolean firstClick;
   public boolean isDead;
-  public Tile[] unrevealedBombs;
+  public ArrayList<Tile> hiddenBombs = new ArrayList<Tile>();
   private color GREEN = color(150, 250, 200);
   private color RED = color(250, 150, 150);
   private color TAN = color(255, 220, 150);
@@ -256,7 +256,8 @@ public class Grid{
         if(!board[r][c].isBomb && board[r][c].isFlagged){
           incorrectFlags(r, c);
         }
-        else if(board[r][c].isBomb){
+        else if(board[r][c].isBomb && !board[r][c].isFlagged){
+          hiddenBombs.add(board[r][c]);
           revealTile(r, c);
         }
       }

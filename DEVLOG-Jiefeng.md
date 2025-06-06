@@ -49,4 +49,8 @@ This document must be updated daily every time you finish a work session.
 
 ### 2025-06-04 - Shapes for flags
 - Incorrect flags are now displayed with a red X: 10 minutes
-- Flags are now displayed with a red flag (and not an ugly red circle): 15 minutes
+- Flags are now displayed with a red flag (and not an ugly red circle): 15 minutesa
+
+### 2025-06-06 -
+- Helped debug a bug in customPressed where changing the sizeOfTile would not update the amount of bombs, causing too many bombs with too few tiles for those bombs: 10 minutes
+- 
