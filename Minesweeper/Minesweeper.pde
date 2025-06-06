@@ -115,30 +115,30 @@ void customMenu(){
   
   textAlign(RIGHT);
   fill(0);
-  text("20 ", 250, 230);
-  text("25 ", 250, 230 + 60);
-  text("32 ", 250, 230 + 120);
-  text("40 ", 250, 230 + 180);
-  text("50 ", 250, 230 + 240);
-  text("80 ", 250, 230 + 300);
-  text("100 ", 250, 230 + 360);
-  text("160 ", 250, 230 + 420);
-  text("200 ", 250, 230 + 480);
-  text("400 ", 250, 230 + 540);
+  text("4 ", 250, 230);
+  text("16 ", 250, 230 + 60);
+  text("25 ", 250, 230 + 120);
+  text("64 ", 250, 230 + 180);
+  text("100", 250, 230 + 240);
+  text("256 ", 250, 230 + 300);
+  text("400 ", 250, 230 + 360);
+  text("625", 250, 230 + 420);
+  text("1024 ", 250, 230 + 480);
+  text("1600 ", 250, 230 + 540);
   textAlign(LEFT);
-  text(" 10%", 550, 200 + 60);
-  text(" 20%", 550, 200 + 120);
-  text(" 30%", 550, 200 + 180);
-  text(" 40%", 550, 200 + 240);
-  text(" 50%", 550, 200 + 300);
-  text(" 60%", 550, 200 + 360);
-  text(" 70%", 550, 200 + 420);
-  text(" 80%", 550, 200 + 480);
-  text(" 90%", 550, 200 + 540);
-  text(" 100%", 550, 200 + 600);
+  text("  5%", 550, 200 + 60);
+  text(" 10%", 550, 200 + 120);
+  text(" 15%", 550, 200 + 180);
+  text(" 20%", 550, 200 + 240);
+  text(" 25%", 550, 200 + 300);
+  text(" 30%", 550, 200 + 360);
+  text(" 35%", 550, 200 + 420);
+  text(" 40%", 550, 200 + 480);
+  text(" 45%", 550, 200 + 540);
+  text(" 50%", 550, 200 + 600);
   textSize(30);
   textAlign(CENTER, BOTTOM);
-  text("Tile Size", 275, 190); 
+  text("Tiles", 275, 190); 
   text("Bomb Density", 525, 190); 
 
 }
@@ -154,16 +154,16 @@ void customPressed(){
       fill(250, 50, 50);
       rect(250, mouseY - 15, 50, 30);
       int ycor = mouseY - 200;
-      if(ycor <= 60) sizeOfTile = 20;
-      else if(ycor <= 120) sizeOfTile = 25;
-      else if(ycor <= 180) sizeOfTile = 32;
-      else if(ycor <= 240) sizeOfTile = 40;
-      else if(ycor <= 300) sizeOfTile = 50;
-      else if(ycor <= 360) sizeOfTile = 80;
-      else if(ycor <= 420) sizeOfTile = 100;
-      else if(ycor <= 480) sizeOfTile = 160;
-      else if(ycor <= 540) sizeOfTile = 200;
-      else if(ycor <= 600) sizeOfTile = 400;
+      if(ycor <= 60) sizeOfTile = 400;
+      else if(ycor <= 120) sizeOfTile = 200;
+      else if(ycor <= 180) sizeOfTile = 160;
+      else if(ycor <= 240) sizeOfTile = 100;
+      else if(ycor <= 300) sizeOfTile = 80 ;
+      else if(ycor <= 360) sizeOfTile = 50;
+      else if(ycor <= 420) sizeOfTile = 40;
+      else if(ycor <= 480) sizeOfTile = 32;
+      else if(ycor <= 540) sizeOfTile = 25;
+      else if(ycor <= 600) sizeOfTile = 20;
       
     }
     else if(500 < mouseX && mouseX < 550){//bombs by percentage
