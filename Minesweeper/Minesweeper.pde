@@ -80,15 +80,18 @@ void selectionMenu(){
 void selectionPressed(){
   boolean buttonClicked = false;
   if(25 < mouseX && mouseX < 150 && 500 < mouseY && mouseY < 750){
-    bombs = 20;
+    bombs = 10;
+    sizeOfTile = 80;
     buttonClicked = true;
   }
   else if(225 < mouseX && mouseX < 350 && 500 < mouseY && mouseY < 750){
-    bombs = 30;
+    bombs = 40;
+    sizeOfTile = 50;
     buttonClicked = true;
   }
   else if(425 < mouseX && mouseX < 550 && 500 < mouseY && mouseY < 750){
-    bombs = 40;
+    bombs = 100;
+    sizeOfTile = 32;
     buttonClicked = true;
   }
   else if(625 < mouseX && mouseX < 750 && 500 < mouseY && mouseY < 750){
@@ -184,18 +187,21 @@ void gamePressed(){
   if(mouseY > bannerHeight){
     int c = mouseX / sizeOfTile;
     int r = (mouseY - bannerHeight)/ sizeOfTile;
-   // fill(0);
-    if(mouseButton == LEFT){
+    
+    if(mouseButton == LEFT){ //reveals tile
       game.revealTile(r, c);
       if(game.isDead){
         game.deathScreen();
       }
     }
-    else if(mouseButton == RIGHT){
+    
+    else if(mouseButton == RIGHT){ //flags tile
       game.flagTile(r, c);
     }
   }
-  game.editBanner();
+  
+  game.editBanner(); //updates flags
+  
   if(game.totalHidden == game.totalBombs){
     game.winScreen();
   }

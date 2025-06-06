@@ -101,6 +101,7 @@ public class Grid{
   }
 
   void editBanner(){
+    stroke(0);
     fill(250, 190, 120);
     rect(0, 0, width, bannerHeight);
     fill(0);
@@ -112,15 +113,8 @@ public class Grid{
   void revealTile(int r, int c){
     board[r][c].isRevealed = !(board[r][c].isFlagged);
     if(board[r][c].isRevealed && firstClick){ //if it's the first click
-      editFirstBomb(r-1,c-1);
-      editFirstBomb(r-1,c);
-      editFirstBomb(r-1,c+1);
-      editFirstBomb(r,c-1);
       editFirstBomb(r,c);
-      editFirstBomb(r,c+1);
-      editFirstBomb(r+1,c-1);
-      editFirstBomb(r+1,c);
-      editFirstBomb(r+1,c+1);
+      editNeighborBombs(r,c);
       firstClick = false;
     }
 
@@ -194,14 +188,57 @@ public class Grid{
       revealTile(r + 1, c + 1);
     }
   }
+  
+  private void editNeighborBombs(int r, int c){
+    //top left
+    if(r - 1 >= 0 && c - 1 >= 0){
+      editFirstBomb(r-1,c-1);
+    }
+    //top middle
+    if(r - 1 >= 0){
+      editFirstBomb(r-1,c);
+    }
+    //top right
+    if(r - 1 >= 0 && c + 1 < board[r].length){
+      editFirstBomb(r-1,c+1);
+    }
+    //middle left
+    if(c - 1 >= 0){
+      editFirstBomb(r,c-1);
+    }
+    //middle right
+    if(c + 1 < board[r].length){
+      editFirstBomb(r,c+1);
+    }
+    //bottom left
+    if(r + 1 < board.length && c - 1 >= 0){
+      editFirstBomb(r+1,c-1);
+    }
+    //bottom middle
+    if(r + 1 < board.length){
+      editFirstBomb(r+1,c);
+    }
+    //bottom right
+    if(r + 1 < board.length && c + 1 < board[r].length){
+      editFirstBomb(r+1,c+1);
+    }
+  }
 
   
   void flagTile(int r, int c){
     board[r][c].isFlagged = !board[r][c].isFlagged && !board[r][c].isRevealed;
     if(board[r][c].isFlagged == true){
       fill(RED);
-      stroke(0);
-      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
+      stroke(RED);
+      int midC = c * sizeOfTile + (sizeOfTile/2);
+      int midR = r * sizeOfTile + (sizeOfTile/2) + bannerHeight;
+      int i = sizeOfTile/2;
+      triangle(midC - i/2, midR - 2 * i/3,
+               midC - i/2, midR,
+               midC + i/2, midR);
+               
+      line(midC - i/2, midR + 2 * i/3,
+           midC - i/2, midR - i/2);
       totalFlags++;
     }
     else if(!board[r][c].isRevealed){
@@ -215,18 +252,29 @@ public class Grid{
   public void deathScreen(){
     for(int r = 0; r < board.length; r++){
       for(int c = 0; c < board[r].length; c++){
-        if(!board[r][c].isBomb && board[r][c].isFlagged){
-          fill(BLACK);
+        if(!board[r][c].isBomb && board[r][c].isFlagged){ //incorrect flags
+          fill(GREEN);
           stroke(0);
-          circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
+          square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile); //refills the square
+          
+          stroke(RED);
+          int midC = c * sizeOfTile + (sizeOfTile/2);
+          int midR = r * sizeOfTile + (sizeOfTile/2) + bannerHeight;
+          int i = sizeOfTile/2;
+          line(midC - i, midR - i, //top left
+               midC + i, midR + i); // to bottom right
+          line(midC + i, midR - i, //top right
+               midC - i, midR + i); //to bottom left
+          
         }
         else if(board[r][c].isBomb){
           revealTile(r, c);
         }
       }
     }
-    page = 4; //unless you want to keep pressing, in which case delete
+    page = -1; //unless you want to keep pressing, in which case delete
   }
+  
   public void winScreen(){
     fill(200, 255, 200);
     rect(0, 0, width, bannerHeight);
@@ -234,6 +282,6 @@ public class Grid{
     textSize(80);
     textAlign(CENTER);
     text("WIN >:D", width/2, bannerHeight*.8);
-    page = 4;
+    page = -1;
   }
 }
