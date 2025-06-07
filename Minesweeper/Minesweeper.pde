@@ -175,7 +175,7 @@ void customPressed(){
       rect(500, 200, 50, 600); 
       fill(250, 50, 50);
       rect(500, mouseY - 15, 50, 30);
-      customPercentage = (mouseY - 200)/6;
+      customPercentage = (mouseY - 200)/12;
       
     }
      bombs =(int)((800.0/sizeOfTile)*(800.0/sizeOfTile)*(customPercentage/100.0));
