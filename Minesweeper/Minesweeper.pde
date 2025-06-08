@@ -45,23 +45,27 @@ void menuSetup(){
   fill(#D1FFBD); //light green
   rect(0, 750, 800, 900); //grass
   
+  
+  //sunflower stem
   stroke(#a9fb4c); //green
   strokeWeight(10);
   noFill();
   int arcStart = (int) (Math.random() * 500);
-  arc(arcStart, 800, 200, 500, PI/2 + PI, 2* PI); //sunflower stem
+  int arcHeight = 550;
+  arc(arcStart, 800, 200, arcHeight - 50, PI/2 + PI, 2* PI); //sunflower stem
   stroke(0); //back to default
   strokeWeight(1);
   
   noStroke();
   fill(#FAE033); //yellow
   ellipseMode(CORNERS);
-  ellipse(arcStart - 25, 450, arcStart + 25, 650);
-  ellipse(arcStart - 100, 450, arcStart + 100, 650);
+  ellipse(arcStart - 25, arcHeight - 100, arcStart + 25, arcHeight + 100); //top to bottom
+  ellipse(arcStart - 100, arcHeight - 25, arcStart + 100, arcHeight + 25); //left to right
   ellipseMode(CENTER); //back to default
+  stroke(0);
   
   fill(#482509); //brown
-  circle(arcStart, 550, 100); //sunflower inside flower
+  circle(arcStart, arcHeight, 100); //sunflower inside flower
   
    
   
