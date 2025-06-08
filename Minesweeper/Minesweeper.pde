@@ -146,6 +146,7 @@ void customMenu(){
   textAlign(CENTER, BOTTOM);
   text("Tiles", 275, 190); 
   text("Bomb Density", 525, 190); 
+  text("Press [ENTER] to confirm choices", width/2, 50); 
 
 }
 void customPressed(){
@@ -225,4 +226,18 @@ void keyPressed(){
     game.initialDisplay();
     page = 2;
   }
+  if(key == 'w'){
+    for(int r = 0; r < game.board.length; r++){
+      for(int c = 0; c < game.board[r].length; c++){
+        if(game.board[r][c].isFlagged){
+          game.board[r][c].isFlagged = false;
+        }
+        if(game.board[r][c].isBomb == false){
+          game.revealTile(r, c);
+        }
+      }
+    }
+    game.winScreen();
+  }
+    
 }
