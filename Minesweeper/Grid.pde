@@ -264,6 +264,8 @@ public class Grid{
         }
       }
     }
+    
+    
     page = -1; //unless you want to keep pressing, in which case delete
     frameRate(game.hiddenBombs.size() / 3);
   }

@@ -57,3 +57,4 @@ This document must be updated daily every time you finish a work session.
 
 ### 2025-06-08
 - Finished editing draw and deathScreen. Bombs now appear one a time over a span of 3 seconds.
+- Added a dark red circle to the sprite of the bomb

@@ -12,6 +12,7 @@ void setup(){
   menuSetup();
   sizeOfTile = 50;
   bombs = 25;
+  frameRate(30); //default
 }
 void draw(){
   if(game != null && game.isDead && game.hiddenBombs.size() > 0){
@@ -197,7 +198,6 @@ void gamePressed(){
       game.revealTile(r, c);
       if(game.isDead){
         game.deathScreen();
-        println(game.hiddenBombs.size());
       }
     }
     
