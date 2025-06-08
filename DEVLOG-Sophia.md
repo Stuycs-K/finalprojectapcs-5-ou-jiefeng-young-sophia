@@ -50,3 +50,5 @@ Expanded description including how much time was spent on task.
 - and 2. tile is not size, but rather amount on the board
 ### 2025-06-07 - More Custom debugging
 - bomb percentage caps at 50%
+### 2025-06-07 - Final touches
+- winscreen cheat code, press 'w' to reveal safe tiles and get winscreen
