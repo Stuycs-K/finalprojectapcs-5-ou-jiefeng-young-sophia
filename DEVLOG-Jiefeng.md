@@ -46,3 +46,14 @@ This document must be updated daily every time you finish a work session.
 ### 2025-06-03 - Playtesting
 - Changed difficulty of easy, medium, and hard modes: 2 minutes
 - Fixed the same bug in selectionPressed that occured on 5/30: 5 minutes
+
+### 2025-06-04 - Shapes for flags
+- Incorrect flags are now displayed with a red X: 10 minutes
+- Flags are now displayed with a red flag (and not an ugly red circle): 15 minutes
+
+### 2025-06-06 - Nothing pushed to main
+- Helped debug a bug in customPressed where changing the sizeOfTile would not update the amount of bombs, causing too many bombs with too few tiles for those bombs: 10 minutes
+- Worked on editing draw, deathScreen, and revealTile in order to allow bombs to appear one at a time: 30 minutes
+
+### 2025-06-08
+- Finished editing draw and deathScreen. Bombs now appear one a time over a span of 3 seconds.

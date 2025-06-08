@@ -14,6 +14,11 @@ void setup(){
   bombs = 25;
 }
 void draw(){
+  if(game != null && game.isDead && game.hiddenBombs.size() > 0){
+    int randIndex = (int) (Math.random() * game.hiddenBombs.size());
+    Tile t = game.hiddenBombs.remove(randIndex);
+    game.revealTile(t.r, t.c);
+  }
 }
 
 void mousePressed(){
@@ -192,6 +197,7 @@ void gamePressed(){
       game.revealTile(r, c);
       if(game.isDead){
         game.deathScreen();
+        println(game.hiddenBombs.size());
       }
     }
     
