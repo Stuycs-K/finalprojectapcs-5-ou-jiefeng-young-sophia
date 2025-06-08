@@ -8,6 +8,7 @@ public class Grid{
   public ArrayList<Tile> hiddenBombs = new ArrayList<Tile>();
   private color GREEN = color(150, 250, 200);
   private color RED = color(250, 150, 150);
+  private color DARK_RED = color(139, 0, 0);
   private color TAN = color(255, 220, 150);
   private color BLACK = color(0, 0, 0);
 
@@ -150,6 +151,8 @@ public class Grid{
       fill(RED);
       stroke(0);
       square(c * sizeOfTile, r * sizeOfTile + bannerHeight, sizeOfTile);
+      fill(DARK_RED);
+      circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
       isDead = true;
     }
     totalHidden--;
