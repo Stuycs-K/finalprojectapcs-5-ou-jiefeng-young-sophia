@@ -39,9 +39,17 @@ void mousePressed(){
 }
 
 void menuSetup(){
-  fill(100);
-  rect(0, 0, width, height);
-
+  fill(#82C8E5); //sky blue
+  rect(0, 0, 800, 900); //sky
+  
+  fill(#D1FFBD); //light green
+  rect(0, 750, 800, 900); //grass
+  
+  stroke(#9CA904); //green
+  strokeWeight(10);
+  noFill();
+  arc((float) (Math.random() * 800), 800, 200, 500, PI/2 + PI, 2* PI);
+  
   fill(255);
   textSize(100);
   textAlign(CENTER);
