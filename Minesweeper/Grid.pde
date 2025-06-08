@@ -265,6 +265,12 @@ public class Grid{
       }
     }
     
+    fill(RED);
+    rect(0, 0, width, bannerHeight);
+    fill(DARK_RED);
+    textSize(80);
+    textAlign(CENTER);
+    text("lose :(", width/2, bannerHeight*.8);
     
     page = -1; //unless you want to keep pressing, in which case delete
     frameRate(game.hiddenBombs.size() / 3);

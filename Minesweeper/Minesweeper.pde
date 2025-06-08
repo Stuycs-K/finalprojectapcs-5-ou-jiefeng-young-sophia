@@ -5,6 +5,7 @@ private int bannerHeight = 100;
 private int page = 0;
 private int customPage = 100;
 private int customPercentage = 20;
+private boolean isDrawing = false;
 
 void setup(){
   size(800, 900);
@@ -16,9 +17,13 @@ void setup(){
 }
 void draw(){
   if(game != null && game.isDead && game.hiddenBombs.size() > 0){
+    isDrawing = true;
     int randIndex = (int) (Math.random() * game.hiddenBombs.size());
     Tile t = game.hiddenBombs.remove(randIndex);
     game.revealTile(t.r, t.c);
+  }
+  else{
+    isDrawing = false;
   }
 }
 
@@ -244,7 +249,7 @@ void gamePressed(){
 
 
 void keyPressed(){
-  if(key == ' '){
+  if(key == ' ' && !isDrawing){
     setup();
   }
   if(key == ENTER && page == customPage){
