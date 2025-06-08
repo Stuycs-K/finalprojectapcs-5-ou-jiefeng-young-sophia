@@ -55,9 +55,10 @@ This document must be updated daily every time you finish a work session.
 - Helped debug a bug in customPressed where changing the sizeOfTile would not update the amount of bombs, causing too many bombs with too few tiles for those bombs: 10 minutes
 - Worked on editing draw, deathScreen, and revealTile in order to allow bombs to appear one at a time: 30 minutes
 
-### 2025-06-08
+### 2025-06-08 - Drawings
 - Finished editing draw and deathScreen. Bombs now appear one a time over a span of 3 seconds: 30 minutes
 - Added a dark red circle to the sprite of the bomb: 5 minutes
 - Fixed a bug with frameRate where the frameRate is not reset to the default value after a game, causing scenarios where the game appears to be lagging: 2 minutes 
 - Added a sunflower to the main menu (this was not worth the effort required): 1 hour
 - Fixed a bug with draw and keyPressed where if the bombs are drawing when resetting the board, the bombs continue drawing on the main menu, added isDrawing varible to fix this: 10 minutes
+- Added a lose banner: 10 minutes

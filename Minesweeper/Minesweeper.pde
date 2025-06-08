@@ -239,7 +239,9 @@ void gamePressed(){
     }
   }
   
-  game.editBanner(); //updates flags
+  if(!game.isDead){
+    game.editBanner(); //updates flags
+  }
   
   if(game.totalHidden == game.totalBombs){
     game.winScreen();
