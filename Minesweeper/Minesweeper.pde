@@ -14,11 +14,10 @@ void setup(){
   bombs = 25;
 }
 void draw(){
-  if(game != null && game.isDead){
-    frameRate(game.hiddenBombs.size() / 3);
-    Tile t = game.hiddenBombs.remove(0);
+  if(game != null && game.isDead && game.hiddenBombs.size() > 0){
+    int randIndex = (int) (Math.random() * game.hiddenBombs.size());
+    Tile t = game.hiddenBombs.remove(randIndex);
     game.revealTile(t.r, t.c);
-    //idea: deathScreen adds to List<Tile> hiddenBombs which is then revealed one at a time with draw
   }
 }
 

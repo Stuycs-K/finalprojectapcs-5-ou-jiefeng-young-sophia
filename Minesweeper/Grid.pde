@@ -258,11 +258,11 @@ public class Grid{
         }
         else if(board[r][c].isBomb && !board[r][c].isFlagged){
           hiddenBombs.add(board[r][c]);
-          revealTile(r, c);
         }
       }
     }
     page = -1; //unless you want to keep pressing, in which case delete
+    frameRate(game.hiddenBombs.size() / 3);
   }
   
   private void incorrectFlags(int r, int c){
