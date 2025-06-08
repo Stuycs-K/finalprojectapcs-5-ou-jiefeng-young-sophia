@@ -56,5 +56,6 @@ This document must be updated daily every time you finish a work session.
 - Worked on editing draw, deathScreen, and revealTile in order to allow bombs to appear one at a time: 30 minutes
 
 ### 2025-06-08
-- Finished editing draw and deathScreen. Bombs now appear one a time over a span of 3 seconds.
-- Added a dark red circle to the sprite of the bomb
+- Finished editing draw and deathScreen. Bombs now appear one a time over a span of 3 seconds: 30 minutes
+- Added a dark red circle to the sprite of the bomb: 5 minutes
+- Fixed a bug with frameRate where the frameRate is not reset to the default value after a game, causing scenarios where the game appears to be lagging: 2 minutes 
