@@ -45,10 +45,10 @@ void menuSetup(){
   fill(#D1FFBD); //light green
   rect(0, 750, 800, 900); //grass
   
-  stroke(#9CA904); //green
+  stroke(#a9fb4c); //green
   strokeWeight(10);
   noFill();
-  arc((float) (Math.random() * 800), 800, 200, 500, PI/2 + PI, 2* PI);
+  arc((float) (Math.random() * 500) + 300, 800, 200, 500, PI/2 + PI, 2* PI);
   
   fill(255);
   textSize(100);
