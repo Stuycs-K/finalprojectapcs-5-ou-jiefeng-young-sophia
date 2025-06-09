@@ -63,3 +63,4 @@ This document must be updated daily every time you finish a work session.
 - Fixed a bug with draw and keyPressed where if the bombs are drawing when resetting the board, the bombs continue drawing on the main menu, added isDrawing varible to fix this: 10 minutes
 - Added a lose banner: 10 minutes
 - Fixed a bug with the frameRate where when there were less than 3 bombs left on the board, would cause the frameRate to become 0 and thus freeze the game: 20 minutes
+- Fixed a bug with revealTile where when the last tile clicked is a bomb and not a safe tile, would cause the win screen to show up because the condition was technically met: 2 minutes

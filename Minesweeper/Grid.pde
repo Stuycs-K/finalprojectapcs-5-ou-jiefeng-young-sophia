@@ -154,6 +154,7 @@ public class Grid{
       fill(DARK_RED);
       circle(c * sizeOfTile + (sizeOfTile/2), r * sizeOfTile + (sizeOfTile/2) + bannerHeight, sizeOfTile/2);
       isDead = true;
+      totalHidden++;
     }
     totalHidden--;
   }
