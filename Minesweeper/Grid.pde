@@ -273,7 +273,7 @@ public class Grid{
     text("lose :(", width/2, bannerHeight*.8);
     
     page = -1;
-    frameRate(game.hiddenBombs.size() / 3);
+    frameRate(((float) game.hiddenBombs.size() + 1) / 3);
   }
   
   private void incorrectFlags(int r, int c){

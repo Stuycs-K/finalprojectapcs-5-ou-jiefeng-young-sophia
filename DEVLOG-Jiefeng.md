@@ -62,3 +62,4 @@ This document must be updated daily every time you finish a work session.
 - Added a sunflower to the main menu (this was not worth the effort required): 1 hour
 - Fixed a bug with draw and keyPressed where if the bombs are drawing when resetting the board, the bombs continue drawing on the main menu, added isDrawing varible to fix this: 10 minutes
 - Added a lose banner: 10 minutes
+- Fixed a bug with the frameRate where when there were less than 3 bombs left on the board, would cause the frameRate to become 0 and thus freeze the game: 20 minutes
