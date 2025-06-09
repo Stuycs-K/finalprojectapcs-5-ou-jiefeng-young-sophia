@@ -44,11 +44,13 @@ Expanded description including how much time was spent on task.
 - bombs were zero because i used percentage, which is a double/float, messing up bomb calulations
 - added decimal point and type casted the result
 - seems to work now, nice
-### 2025-06-07 - More Custom debugging
+### 2025-06-06 - More Custom debugging
 - class, making bomb should come after every click because you can adjust size after percentage
 - adjusting the scale so 1. less insta-kill(anything is possible if you try hard enough though)
 - and 2. tile is not size, but rather amount on the board
 ### 2025-06-07 - More Custom debugging
 - bomb percentage caps at 50%
-### 2025-06-07 - Final touches
+### 2025-06-08 - Final touches
 - winscreen cheat code, press 'w' to reveal safe tiles and get winscreen
+- lots of debugging and moral support for debugging
+- adjusted custom scale again

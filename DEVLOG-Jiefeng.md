@@ -65,3 +65,6 @@ This document must be updated daily every time you finish a work session.
 - Fixed a bug with the frameRate where when there were less than 3 bombs left on the board, would cause the frameRate to become 0 and thus freeze the game: 20 minutes
 - Fixed a bug with revealTile where when the last tile clicked is a bomb and not a safe tile, would cause the win screen to show up because the condition was technically met: 2 minutes
 - Fixed a bug with revealTile where totalHidden is decremented even though the tile is flagged and therefore still hidden: 10 minutes
+
+
+I believe this document accurately reflects the contributions of my teamate. - Sophia Young
