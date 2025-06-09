@@ -52,5 +52,6 @@ Expanded description including how much time was spent on task.
 - bomb percentage caps at 50%
 ### 2025-06-08 - Final touches
 - winscreen cheat code, press 'w' to reveal safe tiles and get winscreen
+- uml and video outline
 - lots of debugging and moral support for debugging
 - adjusted custom scale again
