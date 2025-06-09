@@ -162,7 +162,7 @@ void customMenu(){
   text("400 ", 250, 230 + 360);
   text("625", 250, 230 + 420);
   text("1024 ", 250, 230 + 480);
-  text("1600 ", 250, 230 + 540);
+ //text("1600 ", 250, 230 + 540);
   textAlign(LEFT);
   text("  5%", 550, 200 + 60);
   text(" 10%", 550, 200 + 120);
@@ -201,8 +201,8 @@ void customPressed(){
       else if(ycor <= 360) sizeOfTile = 50;
       else if(ycor <= 420) sizeOfTile = 40;
       else if(ycor <= 480) sizeOfTile = 32;
-      else if(ycor <= 540) sizeOfTile = 25;
-      else if(ycor <= 600) sizeOfTile = 20;
+      //else if(ycor <= 540) sizeOfTile = 25;
+      else if(ycor <= 600) sizeOfTile = 25;
       
     }
     else if(500 < mouseX && mouseX < 550){//bombs by percentage
@@ -215,6 +215,7 @@ void customPressed(){
       fill(250, 50, 50);
       rect(500, mouseY - 15, 50, 30);
       customPercentage = (mouseY - 200)/12;
+      if(customPercentage < 5) customPercentage = 5;
       
     }
      bombs =(int)((800.0/sizeOfTile)*(800.0/sizeOfTile)*(customPercentage/100.0));
