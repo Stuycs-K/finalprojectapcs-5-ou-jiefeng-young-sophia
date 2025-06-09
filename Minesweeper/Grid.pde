@@ -156,7 +156,10 @@ public class Grid{
       isDead = true;
       totalHidden++;
     }
-    totalHidden--;
+    
+    if(!board[r][c].isFlagged){
+      totalHidden--;
+    }
   }
 
   private void revealNeighbors(int r, int c){ //only nonrevealed neighbors are affected

@@ -55,7 +55,7 @@ This document must be updated daily every time you finish a work session.
 - Helped debug a bug in customPressed where changing the sizeOfTile would not update the amount of bombs, causing too many bombs with too few tiles for those bombs: 10 minutes
 - Worked on editing draw, deathScreen, and revealTile in order to allow bombs to appear one at a time: 30 minutes
 
-### 2025-06-08 - Drawings
+### 2025-06-08 - Drawings and Bug Fixes
 - Finished editing draw and deathScreen. Bombs now appear one a time over a span of 3 seconds: 30 minutes
 - Added a dark red circle to the sprite of the bomb: 5 minutes
 - Fixed a bug with frameRate where the frameRate is not reset to the default value after a game, causing scenarios where the game appears to be lagging: 2 minutes 
@@ -64,3 +64,4 @@ This document must be updated daily every time you finish a work session.
 - Added a lose banner: 10 minutes
 - Fixed a bug with the frameRate where when there were less than 3 bombs left on the board, would cause the frameRate to become 0 and thus freeze the game: 20 minutes
 - Fixed a bug with revealTile where when the last tile clicked is a bomb and not a safe tile, would cause the win screen to show up because the condition was technically met: 2 minutes
+- Fixed a bug with revealTile where totalHidden is decremented even though the tile is flagged and therefore still hidden: 10 minutes
