@@ -55,3 +55,5 @@ Expanded description including how much time was spent on task.
 - uml and video outline
 - lots of debugging and moral support for debugging
 - adjusted custom scale again
+
+I believe this document accurately reflects the contributions of my teammate. -Jiefeng Ou
